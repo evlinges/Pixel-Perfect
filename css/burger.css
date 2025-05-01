@@ -1,0 +1,71 @@
+/* Стилі для бургер-меню */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .burger span {
+    background-color: #fff;
+    height: 2px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Анімація хрестика при активному меню */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 7px;
+  }
+  
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -7px;
+  }
+  
+  /* Стилі для меню */
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Стилі для мобільної версії */
+  @media (max-width: 768px) {
+    .burger {
+      display: flex;
+      width: 20px;  /* Менше для мобільних пристроїв */
+      height: 16px; /* Менше для мобільних пристроїв */
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 200px;
+      padding: 20px;
+      border-radius: 5px;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  }
+  
