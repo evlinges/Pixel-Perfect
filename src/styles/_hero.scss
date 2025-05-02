@@ -1,0 +1,45 @@
+.hero-section {
+    background-image: url("../img/background_header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 180px 0 100px 0;
+    color: #ffffff; /* white */
+  
+    .hero-text {
+      .hero-subtitle {
+        color: #00bcd4; /* primary blue */
+        font-size: 22px;
+        font-weight: 600;
+      }
+  
+      .hero-title {
+        color: #ffffff; /* white */
+        font-size: 72px;
+        font-weight: 700;
+      }
+  
+      .hero-description {
+        color: #b2b2b2; /* light gray */
+        font-size: 22px;
+      }
+  
+      .btn-primary {
+        background-color: #00bcd4; /* primary blue */
+        border-color: #00bcd4; /* primary blue */
+        
+        &:hover {
+          background-color: #00a5b8; /* darker blue */
+        }
+      }
+  
+      .btn-outline-light {
+        border-color: #ffffff; /* white */
+        
+        &:hover {
+          background-color: #ffffff; /* white */
+          color: #00bcd4; /* primary blue */
+        }
+      }
+    }
+  }

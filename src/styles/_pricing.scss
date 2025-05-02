@@ -1,0 +1,41 @@
+.pricing-section {
+    background: #ffffff; /* white */
+  
+    .section-subtitle {
+      color: #00bcd4; /* primary blue */
+    }
+  
+    .section-title {
+      color: #1a1a1a; /* dark gray */
+    }
+  
+    .pricing-card {
+      border: 1px solid #eeeeee; /* light gray border */
+      
+      .plan-name {
+        color: #1a1a1a; /* dark gray */
+      }
+  
+      .price {
+        color: #00bcd4; /* primary blue */
+        
+        small {
+          color: #b2b2b2; /* light gray */
+        }
+      }
+  
+      .plan-description {
+        color: #666666; /* gray */
+      }
+  
+      .btn-outline-primary {
+        border-color: #00bcd4; /* primary blue */
+        color: #00bcd4; /* primary blue */
+        
+        &:hover {
+          background-color: #00bcd4; /* primary blue */
+          color: #ffffff; /* white */
+        }
+      }
+    }
+  }

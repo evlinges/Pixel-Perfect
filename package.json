@@ -1,26 +1,36 @@
 {
   "name": "pixelperfect",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "gulpfile.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evlinges/Pixel-Perfect.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/evlinges/Pixel-Perfect/issues"
+  },
+  "homepage": "https://github.com/evlinges/Pixel-Perfect#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "@babel/register": "^7.27.1",
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^9.1.0",
-    "gulp-postcss": "^10.0.0",
     "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^2.6.5",
     "sass": "^1.87.0"
   },
-  "dependencies": {
-    "slick-carousel": "^1.8.1"
-  }
+  "description": ""
 }

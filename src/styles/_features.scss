@@ -1,0 +1,28 @@
+.features-section {
+    padding: 100px 0;
+    background: #ffffff; /* white */
+  
+    .section-subtitle {
+      color: #00bcd4; /* primary blue */
+    }
+  
+    .section-title {
+      color: #1a1a1a; /* dark gray */
+    }
+  
+    .feature-icon {
+      background: rgba(0, 188, 212, 0.1); /* primary blue with opacity */
+      
+      i {
+        color: #00bcd4; /* primary blue */
+      }
+    }
+  
+    h3 {
+      color: #1a1a1a; /* dark gray */
+    }
+  
+    p {
+      color: #666666; /* gray */
+    }
+  }
