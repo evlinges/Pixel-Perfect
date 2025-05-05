@@ -1,45 +1,136 @@
+/* Герой (Банер) */
 .hero-section {
-    background-image: url("../img/background_header.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 180px 0 100px 0;
-    color: #ffffff; /* white */
-  
-    .hero-text {
-      .hero-subtitle {
-        color: #00bcd4; /* primary blue */
-        font-size: 22px;
-        font-weight: 600;
-      }
-  
-      .hero-title {
-        color: #ffffff; /* white */
-        font-size: 72px;
-        font-weight: 700;
-      }
-  
-      .hero-description {
-        color: #b2b2b2; /* light gray */
-        font-size: 22px;
-      }
-  
-      .btn-primary {
-        background-color: #00bcd4; /* primary blue */
-        border-color: #00bcd4; /* primary blue */
-        
-        &:hover {
-          background-color: #00a5b8; /* darker blue */
-        }
-      }
-  
-      .btn-outline-light {
-        border-color: #ffffff; /* white */
-        
-        &:hover {
-          background-color: #ffffff; /* white */
-          color: #00bcd4; /* primary blue */
-        }
-      }
-    }
+  background-image: url("../img/background_header.png");
+   position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 180px 0 100px 0;
+  color: #fff;
+}
+
+.hero-section .container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin-left: -150px;
+}
+
+.hero-subtitle {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #008de6;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.hero-title {
+  font-size: 60px;         
+  font-weight: 900;        
+  margin-bottom: 24px;     
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-size: 21px;
+  color: #b2b2b2;
+  margin-bottom: 36px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+.hero-text-inner {
+  margin-left: -150px;      /* зміщення тексту вліво, підбери під свій дизайн */
+  padding-right: 40px;     /* щоб телефон не "прилипав" до тексту */
+}
+.hero-image {
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    justify-content: flex-end;
+    /* Якщо треба, додай padding-right або negative margin */
+    padding-right: 30px; /* підбери під свій макет */
   }
+  .features-section {
+    position: relative;
+    background: #fff;
+    margin-top: -60px; /* негативний margin накладає білий блок на попередній */
+    z-index: 2;
+    border-radius: 0 0 8px 8px; /* якщо треба скруглення */
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.06); /* легка тінь, як у Lucid */
+  }
+
+@media (max-width: 991.98px) {
+  .hero-text-inner {
+    margin-left: 0;
+    padding-right: 0;
+  }
+}
+
+.hero-buttons .btn {
+  padding: 12px 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.hero-buttons .btn-primary {
+  background: #008ed6;
+  border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+  background: #0020d6;
+}
+
+.hero-buttons .btn-outline-light:hover {
+  background: #fff;
+  color: #008de6;;
+}
+
+/* Мобільна адаптація для героя */
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding: 120px 0 80px;
+  }
+
+  .hero-section .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
