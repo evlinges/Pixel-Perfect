@@ -1,0 +1,80 @@
+.details-section {
+    h5 {
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #4f9ecf;
+    }
+  
+    h2 {
+      font-size: 32px;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+  
+    p {
+      margin-top: 15px;
+      color: #555;
+    }
+  
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    @media (max-width: 767.98px) {
+      .row {
+        flex-direction: column !important;
+        text-align: center;
+      }
+  
+      .col-md-6 {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  
+  .pricing-section {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  
+    h5 {
+      color: #4f9ecf;
+      font-weight: bold;
+    }
+  
+    .testimonial-item {
+      max-width: 700px;
+      margin: auto;
+  
+      p {
+        font-style: italic;
+        font-size: 18px;
+      }
+  
+      .testimonial-author {
+        margin-top: 20px;
+        img {
+          border-radius: 50%;
+        }
+  
+        h6 {
+          font-size: 16px;
+          margin: 0;
+        }
+  
+        small {
+          display: block;
+          color: #ccc;
+        }
+      }
+    }
+  
+    .slick-dots {
+      margin-top: 30px;
+      li button:before {
+        color: #fff;
+      }
+    }
+  }
+  
