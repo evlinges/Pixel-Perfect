@@ -1,0 +1,126 @@
+.contact-section {
+  background: #f7f8fa;
+  padding-bottom: 0;
+  .contact-subtitle {
+    color: #00aaff;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .contact-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 0;
+  }
+  .blue-line img {
+    display: block;
+    margin: 0 auto;
+  }
+  .contact-info-link {
+    display: inline-block;
+    transition: transform 0.2s;
+    .contact-icon-img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      transition: transform 0.2s, filter 0.2s;
+      filter: grayscale(0.3);
+    }
+    &:hover .contact-icon-img, &:focus .contact-icon-img {
+      transform: scale(1.18);
+      filter: grayscale(0) drop-shadow(0 0 2px #00aaff);
+    }
+  }
+  .contact-info-text {
+    color: #888;
+    font-size: 15px;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .contact-form {
+    background: #18181e;
+    border-radius: 4px;
+    padding: 32px 28px 24px 28px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    .form-control {
+      background: transparent;
+      border: 1px solid #333;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 0;
+      padding: 12px 16px;
+      transition: border-color 0.2s;
+      &:focus {
+        border-color: #00aaff;
+        background: #222;
+        color: #fff;
+      }
+      &::placeholder {
+        color: #888;
+      }
+    }
+    .send-btn {
+      margin-top: 18px;
+      background: #00aaff;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 2px;
+      padding: 12px 0;
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      &:hover, &:focus {
+        background: #0070b8;
+      }
+    }
+  }
+  .contact-thankyou {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    background: #18181e;
+    border-radius: 4px;
+    margin-top: 0;
+  }
+  .contact-map {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block;
+    }
+    @media (max-width: 991.98px) {
+      iframe { height: 300px; }
+    }
+    @media (max-width: 767.98px) {
+      iframe { height: 220px; }
+    }
+  }
+  @media (max-width: 991.98px) {
+    .contact-title { font-size: 28px; }
+    .contact-form { padding: 20px 12px 14px 12px; }
+  }
+  @media (max-width: 767.98px) {
+    .contact-title { font-size: 20px; }
+    .contact-form { padding: 10px 6px 8px 6px; }
+    .contact-info-link .contact-icon-img { width: 36px; height: 36px; }
+  }
+  /* Прибираємо відступи знизу */
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
