@@ -1,15 +1,82 @@
-.testimonials-section {
-    background-color: #1a1a1a; /* dark gray */
-    color: #ffffff; /* white */
-  
-    .author-details {
-      p {
-        color: #b2b2b2; /* light gray */
-      }
+.quality-slider-section {
+  background: url('../img/background_slick.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  .section-title {
+    margin-bottom: 60px;
+
+    h6 {
+      color: #00aaff;
+      font-weight: 700;
     }
-  
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      border-color: #ffffff; /* white */
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .underline {
+      width: 40px;
+      height: 3px;
+      background-color: #00aaff;
+      margin: 0 auto;
+      margin-top: 10px;
     }
   }
+
+  .testimonial-slide {
+    .quote {
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .author {
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      span {
+        font-size: 13px;
+        color: #ccc;
+      }
+
+      strong {
+        display: block;
+      }
+    }
+  }
+
+  .slick-dots-custom {
+    text-align: center;
+    margin-top: 50px;
+
+    button {
+      border: none;
+      background: transparent;
+    }
+
+    .slick-dots li {
+      display: inline-block;
+      margin: 0 5px;
+
+      button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.4);
+        transition: background-color 0.3s ease;
+      }
+
+      &.slick-active button {
+        background-color: #fff;
+      }
+    }
+  }
+}

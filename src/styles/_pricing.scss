@@ -1,41 +1,104 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .pricing-section {
-    background: #ffffff; /* white */
-  
-    .section-subtitle {
-      color: #00bcd4; /* primary blue */
-    }
-  
-    .section-title {
-      color: #1a1a1a; /* dark gray */
-    }
-  
-    .pricing-card {
-      border: 1px solid #eeeeee; /* light gray border */
-      
-      .plan-name {
-        color: #1a1a1a; /* dark gray */
-      }
-  
-      .price {
-        color: #00bcd4; /* primary blue */
-        
-        small {
-          color: #b2b2b2; /* light gray */
-        }
-      }
-  
-      .plan-description {
-        color: #666666; /* gray */
-      }
-  
-      .btn-outline-primary {
-        border-color: #00bcd4; /* primary blue */
-        color: #00bcd4; /* primary blue */
-        
-        &:hover {
-          background-color: #00bcd4; /* primary blue */
-          color: #ffffff; /* white */
-        }
-      }
-    }
-  }
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: #007bff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.blue-line {
+  margin: 15px auto 40px;
+  display: block;
+}
+
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.plan {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+  padding: 30px 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+}
+
+.plan-name {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.price span {
+  font-size: 18px;
+  vertical-align: top;
+}
+
+.per-month {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 2px solid #007bff;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: #007bff;
+  color: white;
+}
