@@ -43,8 +43,8 @@
 
 .logo-main {
   margin-left: -150px;
-  font-size: 48px;
-  font-weight: 900;
+  font-size: 35px;
+  font-weight: 800;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -58,10 +58,11 @@
   flex-direction: column;
   justify-content: flex-end; /* вирівнює текст всередині по низу */
   font-size: 13px;
+  font-weight: 700;
   letter-spacing: 1px;
-  color: #58585d; /* як у Lucid, сірий */
+  color: #434344; /* як у Lucid, сірий */
   line-height: 1.1;
-  margin-bottom: 11px; /* підбери для точного вирівнювання */
+  margin-bottom: 1px; /* підбери для точного вирівнювання */
 }
 
 .burger {
@@ -313,34 +314,37 @@
   }
 }
 .features-section {
-  background-color: #fff;
-  padding: 100px 0 70px 0;
+  position: relative;
+  background: #fff;
+  margin-top: -60px;
+  z-index: 2;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+  padding: 100px 0 70px;
 }
-.features-section .section-subtitle {
-  color: #008de6;
+.features-section .section-header {
+  text-align: center;
+}
+.features-section .section-header .section-subtitle {
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  text-align: center;
+  color: #008de6;
 }
-.features-section .section-title {
+.features-section .section-header .section-title {
   font-size: 36px;
   font-weight: 700;
   margin-top: 10px;
-  color: #222;
-  text-align: center;
+  color: #18171c;
 }
-.features-section .blue-line {
-  margin-top: 20px;
+.features-section .section-header .blue-line {
+  margin: 20px auto 0;
   width: 50px;
-  height: auto;
-  text-align: center;
 }
-.features-section .blue-line img {
-  margin-left: auto;
-  margin-right: auto;
+.features-section .section-header .blue-line img {
   display: block;
+  margin: 0 auto;
 }
 .features-section .feature-item {
   padding: 30px 20px;
@@ -349,15 +353,13 @@
 .features-section .feature-item .feature-icon {
   width: 130px;
   height: 130px;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #e9ecef;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 30px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .features-section .feature-item .feature-icon img.img-icon {
   width: 50px;
@@ -372,19 +374,18 @@
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
-  text-align: center;
+  color: #18171c;
 }
 .features-section .feature-item .feature-text {
   font-size: 16px;
-  color: #666;
+  color: #888;
   line-height: 1.7;
   max-width: 270px;
   margin: 0 auto;
-  text-align: center;
 }
 @media (max-width: 991.98px) {
   .features-section {
-    padding: 80px 0 50px 0;
+    padding: 80px 0 50px;
   }
   .features-section .section-title {
     font-size: 28px;
@@ -395,139 +396,19 @@
 }
 @media (max-width: 767.98px) {
   .features-section {
-    padding: 50px 0 30px 0;
+    padding: 50px 0 30px;
   }
   .features-section .feature-item {
     padding: 24px 0;
   }
-  .features-section .feature-title {
+  .features-section .feature-item .feature-title {
     font-size: 18px;
   }
-  .features-section .feature-text {
+  .features-section .feature-item .feature-text {
     font-size: 15px;
   }
 }
 
-.pricing-section {
-  background: #fff;
-  padding: 100px 0 70px 0;
-}
-.pricing-section .section-subtitle {
-  color: #008de6;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: center;
-}
-.pricing-section .section-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-top: 10px;
-  color: #222;
-  text-align: center;
-}
-.pricing-section .blue-line {
-  margin-top: 20px;
-  width: 50px;
-  height: auto;
-  text-align: center;
-}
-.pricing-section .blue-line img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-.pricing-section .pricing-card {
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  padding: 40px 20px 30px 20px;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-.pricing-section .pricing-card .pricing-title {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 18px;
-  text-transform: uppercase;
-}
-.pricing-section .pricing-card .pricing-price {
-  font-size: 36px;
-  font-weight: 900;
-  margin-bottom: 5px;
-}
-.pricing-section .pricing-card .pricing-period {
-  color: #888;
-  font-size: 15px;
-  margin-bottom: 20px;
-}
-.pricing-section .pricing-card .pricing-desc {
-  color: #666;
-  font-size: 15px;
-  margin-bottom: 24px;
-}
-.pricing-section .pricing-card .pricing-desc .pricing-link {
-  color: #008de6;
-  text-decoration: underline;
-}
-.pricing-section .pricing-card .btn-pricing {
-  background: #fff;
-  border: 2px solid #008de6;
-  color: #008de6;
-  font-weight: 700;
-  border-radius: 4px;
-  padding: 10px 22px;
-  transition: background 0.2s, color 0.2s;
-}
-.pricing-section .pricing-card .btn-pricing:hover, .pricing-section .pricing-card .btn-pricing:focus {
-  background: #008de6;
-  color: #fff;
-}
-.pricing-section .pricing-card.active, .pricing-section .pricing-card:hover {
-  border-color: #008de6;
-  box-shadow: 0 8px 32px rgba(0, 141, 230, 0.07);
-}
-.pricing-section .pricing-card.active .btn-pricing, .pricing-section .pricing-card:hover .btn-pricing {
-  background: #008de6;
-  color: #fff;
-}
-.pricing-section .pricing-card.active {
-  background: #eaf7fd;
-}
-.pricing-section .pricing-card.active .pricing-title, .pricing-section .pricing-card.active .pricing-price {
-  color: #008de6;
-}
-@media (max-width: 991.98px) {
-  .pricing-section {
-    padding: 80px 0 50px 0;
-  }
-  .pricing-section .section-title {
-    font-size: 28px;
-  }
-  .pricing-section .pricing-card {
-    padding: 30px 10px 24px 10px;
-  }
-  .pricing-section .pricing-price {
-    font-size: 28px;
-  }
-}
-@media (max-width: 767.98px) {
-  .pricing-section {
-    padding: 50px 0 30px 0;
-  }
-  .pricing-section .pricing-card {
-    margin-bottom: 24px;
-  }
-  .pricing-section .pricing-title {
-    font-size: 16px;
-  }
-  .pricing-section .pricing-price {
-    font-size: 22px;
-  }
-}
-
-/* Додай contact-section (дивись попередню відповідь) */
 .details-section {
   background: #fff;
   padding: 100px 0 80px 0;
@@ -662,183 +543,229 @@
   }
 }
 
-.quality-slider-section {
-  background: url("../img/background_slick.jpg") no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 80px 0;
-  font-family: "Source Sans Pro", sans-serif;
+.testimonials-section {
+  position: relative;
+  background: url("../img/background_slick.png") no-repeat center center/cover;
+  padding: 100px 0;
+  color: #fff;
+  overflow: hidden;
 }
-.quality-slider-section .section-title {
-  margin-bottom: 60px;
+.testimonials-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
 }
-.quality-slider-section .section-title h6 {
-  color: #00aaff;
+.testimonials-section .container {
+  position: relative;
+  z-index: 2;
+}
+.testimonials-section .section-subtitle {
+  font-size: 14px;
+  color: #00aef0;
   font-weight: 700;
+  letter-spacing: 1px;
 }
-.quality-slider-section .section-title h2 {
+.testimonials-section .section-title {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: bold;
   margin: 10px 0;
 }
-.quality-slider-section .section-title .underline {
-  width: 40px;
-  height: 3px;
-  background-color: #00aaff;
-  margin: 0 auto;
-  margin-top: 10px;
-}
-.quality-slider-section .testimonial-slide .quote {
-  font-style: italic;
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-.quality-slider-section .testimonial-slide .author img {
-  width: 50px;
-  height: 50px;
-}
-.quality-slider-section .testimonial-slide .author span {
-  font-size: 13px;
-  color: #ccc;
-}
-.quality-slider-section .testimonial-slide .author strong {
+.testimonials-section .blue-line {
   display: block;
+  margin: 0 auto 40px;
+  max-width: 100px;
 }
-.quality-slider-section .slick-dots-custom {
-  text-align: center;
-  margin-top: 50px;
-}
-.quality-slider-section .slick-dots-custom button {
-  border: none;
-  background: transparent;
-}
-.quality-slider-section .slick-dots-custom .slick-dots li {
-  display: inline-block;
-  margin: 0 5px;
-}
-.quality-slider-section .slick-dots-custom .slick-dots li button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  transition: background-color 0.3s ease;
-}
-.quality-slider-section .slick-dots-custom .slick-dots li.slick-active button {
-  background-color: #fff;
-}
-
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.pricing-section {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
-.subtitle {
-  color: #007bff;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.title {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.blue-line {
-  margin: 15px auto 40px;
-  display: block;
-}
-
-.plans {
+.testimonials-section .testimonial-slider {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: center;
+  text-align: left;
 }
-
-.plan {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
-  padding: 30px 20px;
-  width: 250px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.plan:hover {
-  transform: translateY(-5px);
-}
-
-.plan-name {
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.price {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: #222;
-}
-
-.price span {
+.testimonials-section .testimonial-slider .testimonial-item {
+  width: calc(50% - 15px);
+  font-style: italic;
   font-size: 18px;
-  vertical-align: top;
+  line-height: 1.6;
 }
-
-.per-month {
-  font-size: 13px;
-  color: #999;
-  margin-bottom: 20px;
+.testimonials-section .testimonial-slider .testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
 }
-
-.description {
+.testimonials-section .testimonial-slider .testimonial-author img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+.testimonials-section .testimonial-slider .testimonial-author h4 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+.testimonials-section .testimonial-slider .testimonial-author span {
+  font-weight: bold;
   font-size: 14px;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 30px;
+  color: #ccc;
+  display: block;
+  margin-top: 4px;
 }
 
-.btn {
+.pricing-slider-section {
+  position: relative;
+  padding: 100px 0 0 0;
+  background: none;
+  overflow: hidden;
+}
+.pricing-slider-section .slider-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/background_slick.jpg") center/cover no-repeat;
+  filter: blur(8px) brightness(0.6);
+  z-index: 1;
+}
+.pricing-slider-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1170px;
+}
+.pricing-slider-section .section-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+.pricing-slider-section .swiper {
+  padding-bottom: 48px;
+}
+.pricing-slider-section .swiper-slide .row {
+  margin: 0;
+}
+.pricing-slider-section .review-card {
+  background: rgba(24, 23, 28, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  color: #fff;
+  padding: 32px 22px 28px 22px;
+  margin: 0 8px 24px 8px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 180px;
+  max-width: 500px;
+  width: 100%;
+}
+.pricing-slider-section .review-card .review-avatar {
+  margin-bottom: 18px;
+}
+.pricing-slider-section .review-card .review-avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+.pricing-slider-section .review-card .review-text {
+  font-size: 1.08rem;
+  color: #e2e2e2;
+  margin-bottom: 18px;
+  min-height: 60px;
+}
+.pricing-slider-section .review-card .review-author {
+  font-size: 1rem;
+  color: #fff;
+}
+.pricing-slider-section .review-card .review-author span {
+  font-size: 0.88rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.pricing-slider-section .swiper-pagination {
+  bottom: 8px !important;
+  text-align: center;
+}
+.pricing-slider-section .swiper-pagination .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.3;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px !important;
+  border-radius: 50%;
   display: inline-block;
-  padding: 10px 25px;
-  border: 2px solid #007bff;
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.2s, opacity 0.2s;
 }
-
-.btn:hover {
-  background: #007bff;
-  color: white;
+.pricing-slider-section .swiper-pagination .swiper-pagination-bullet-active {
+  background: #008de6;
+  opacity: 1;
+}
+.pricing-slider-section .bottom-panel {
+  background: transparent;
+  border-radius: 12px;
+  padding: 32px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.pricing-slider-section .bottom-panel .panel-text {
+  color: #fff;
+  font-size: 1.18rem;
+}
+.pricing-slider-section .bottom-panel .panel-text span {
+  font-weight: 700;
+}
+.pricing-slider-section .bottom-panel .panel-buttons .btn-link {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-right: 12px;
+}
+.pricing-slider-section .bottom-panel .btn-primary {
+  background: #008de6;
+  border: none;
+  font-weight: 700;
+  padding: 10px 32px;
+  border-radius: 4px;
+  color: #fff;
+}
+@media (max-width: 991.98px) {
+  .pricing-slider-section {
+    padding: 70px 0 0 0;
+  }
+  .pricing-slider-section .review-card {
+    min-width: 90vw;
+  }
+  .pricing-slider-section .swiper-slide .row > div {
+    max-width: 100% !important;
+    flex: 0 0 100%;
+  }
+  .pricing-slider-section .bottom-panel {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 12px;
+  }
 }
 
 .contact-section {
   background: #f7f8fa;
   padding-bottom: 0;
-  /* Прибираємо відступи знизу */
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
 }
 .contact-section .contact-subtitle {
   color: #00aaff;
@@ -1017,70 +944,13 @@ body {
 }
 
 /* Базові стилі */
+html, body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  background: #fff;
-  color: #333;
-}
-
-.features-section {
-  background-color: #fff;
-  padding: 80px 0;
-}
-.features-section .section-subtitle {
-  color: #007bff;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-.features-section .section-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 10px;
-  color: #222;
-}
-.features-section .blue-line {
-  width: 40px;
-  height: auto;
-}
-.features-section .feature-item {
-  padding: 20px;
-}
-.features-section .feature-item .feature-icon {
-  width: 110px;
-  height: 110px;
-  border: 1px solid #e6e6e6;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.features-section .feature-item .feature-icon img.img-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-.features-section .feature-item .feature-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.features-section .feature-item .feature-text {
-  font-size: 14px;
-  color: #999;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
 }
 /*# sourceMappingURL=main.css.map */

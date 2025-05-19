@@ -1,30 +1,33 @@
 .features-section {
-  background-color: #fff;
-  padding: 100px 0 70px 0;
-  .section-subtitle {
-    color: #008de6;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  position: relative;
+  background: #fff;
+  margin-top: -60px;
+  z-index: 2;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+  padding: 100px 0 70px;
+  .section-header {
     text-align: center;
-  }
-  .section-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-top: 10px;
-    color: #222;
-    text-align: center;
-  }
-  .blue-line {
-    margin-top: 20px;
-    width: 50px;
-    height: auto;
-    text-align: center;
-    img {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
+    .section-subtitle {
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #008de6;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-top: 10px;
+      color: #18171c;
+    }
+    .blue-line {
+      margin: 20px auto 0;
+      width: 50px;
+      img {
+        display: block;
+        margin: 0 auto;
+      }
     }
   }
   .feature-item {
@@ -33,15 +36,13 @@
     .feature-icon {
       width: 130px;
       height: 130px;
-      border: 2px solid #e6e6e6;
+      border: 2px solid #e9ecef;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 30px;
-      transition: all 0.3s ease;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 30px;
+      transition: border-color 0.3s, box-shadow 0.3s;
       img.img-icon {
         width: 50px;
         height: 50px;
@@ -56,132 +57,35 @@
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 15px;
-      text-align: center;
+      color: #18171c;
     }
     .feature-text {
       font-size: 16px;
-      color: #666;
+      color: #888;
       line-height: 1.7;
       max-width: 270px;
       margin: 0 auto;
-      text-align: center;
-    }
-
-  }
-  @media (max-width: 991.98px) {
-    padding: 80px 0 50px 0;
-    .section-title { font-size: 28px; }
-    .feature-item { padding: 30px 10px; }
-  }
-  @media (max-width: 767.98px) {
-    padding: 50px 0 30px 0;
-    .feature-item { padding: 24px 0; }
-    .feature-title { font-size: 18px; }
-    .feature-text { font-size: 15px; }
-  }
-}
-
-.pricing-section {
-  background: #fff;
-  padding: 100px 0 70px 0;
-  .section-subtitle {
-    color: #008de6;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  .section-title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-top: 10px;
-    color: #222;
-    text-align: center;
-  }
-  .blue-line {
-    margin-top: 20px;
-    width: 50px;
-    height: auto;
-    text-align: center;
-    img {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-    }
-  }
-  .pricing-card {
-    background: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 10px;
-    padding: 40px 20px 30px 20px;
-    transition: box-shadow 0.2s, border-color 0.2s;
-    .pricing-title {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-    .pricing-price {
-      font-size: 36px;
-      font-weight: 900;
-      margin-bottom: 5px;
-    }
-    .pricing-period {
-      color: #888;
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-    .pricing-desc {
-      color: #666;
-      font-size: 15px;
-      margin-bottom: 24px;
-      .pricing-link {
-        color: #008de6;
-        text-decoration: underline;
-      }
-    }
-    .btn-pricing {
-      background: #fff;
-      border: 2px solid #008de6;
-      color: #008de6;
-      font-weight: 700;
-      border-radius: 4px;
-      padding: 10px 22px;
-      transition: background 0.2s, color 0.2s;
-      &:hover, &:focus {
-        background: #008de6;
-        color: #fff;
-      }
-    }
-    &.active, &:hover {
-      border-color: #008de6;
-      box-shadow: 0 8px 32px rgba(0,141,230,0.07);
-      .btn-pricing {
-        background: #008de6;
-        color: #fff;
-      }
-    }
-    &.active {
-      background: #eaf7fd;
-      .pricing-title, .pricing-price {
-        color: #008de6;
-      }
     }
   }
   @media (max-width: 991.98px) {
-    padding: 80px 0 50px 0;
-    .section-title { font-size: 28px; }
-    .pricing-card { padding: 30px 10px 24px 10px; }
-    .pricing-price { font-size: 28px; }
+    padding: 80px 0 50px;
+    .section-title {
+      font-size: 28px;
+    }
+    .feature-item {
+      padding: 30px 10px;
+    }
   }
   @media (max-width: 767.98px) {
-    padding: 50px 0 30px 0;
-    .pricing-card { margin-bottom: 24px; }
-    .pricing-title { font-size: 16px; }
-    .pricing-price { font-size: 22px; }
+    padding: 50px 0 30px;
+    .feature-item {
+      padding: 24px 0;
+      .feature-title {
+        font-size: 18px;
+      }
+      .feature-text {
+        font-size: 15px;
+      }
+    }
   }
 }
-
-/* Додай contact-section (дивись попередню відповідь) */

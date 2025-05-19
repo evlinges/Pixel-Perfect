@@ -42,8 +42,8 @@
 
 .logo-main {
   margin-left: -150px;
-  font-size: 48px;
-  font-weight: 900;
+  font-size: 35px;
+  font-weight: 800;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -57,10 +57,11 @@
   flex-direction: column;
   justify-content: flex-end; /* вирівнює текст всередині по низу */
   font-size: 13px;
+   font-weight: 700;
   letter-spacing: 1px;
-  color: #58585d; /* як у Lucid, сірий */
+  color: #434344; /* як у Lucid, сірий */
   line-height: 1.1;
-  margin-bottom: 11px; /* підбери для точного вирівнювання */
+  margin-bottom: 1px; /* підбери для точного вирівнювання */
 }
 
 .burger {

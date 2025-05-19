@@ -1,81 +1,81 @@
-.quality-slider-section {
-  background: url('../img/background_slick.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 80px 0;
-  font-family: 'Source Sans Pro', sans-serif;
+.testimonials-section {
+  position: relative;
+  background: url('../img/background_slick.png') no-repeat center center/cover;
+  padding: 100px 0;
+  color: #fff;
+  overflow: hidden;
 
-  .section-title {
-    margin-bottom: 60px;
-
-    h6 {
-      color: #00aaff;
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin: 10px 0;
-    }
-
-    .underline {
-      width: 40px;
-      height: 3px;
-      background-color: #00aaff;
-      margin: 0 auto;
-      margin-top: 10px;
-    }
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1;
   }
 
-  .testimonial-slide {
-    .quote {
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+    color: #00aef0;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .blue-line {
+    display: block;
+    margin: 0 auto 40px;
+    max-width: 100px;
+  }
+
+  .testimonial-slider {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: left;
+
+    .testimonial-item {
+      width: calc(50% - 15px);
       font-style: italic;
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 30px;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
-    .author {
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+
       img {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      h4 {
+        margin: 0;
+        font-weight: bold;
+        font-size: 16px;
       }
 
       span {
-        font-size: 13px;
+        font-weight: bold;
+        font-size: 14px;
         color: #ccc;
-      }
-
-      strong {
         display: block;
-      }
-    }
-  }
-
-  .slick-dots-custom {
-    text-align: center;
-    margin-top: 50px;
-
-    button {
-      border: none;
-      background: transparent;
-    }
-
-    .slick-dots li {
-      display: inline-block;
-      margin: 0 5px;
-
-      button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.4);
-        transition: background-color 0.3s ease;
-      }
-
-      &.slick-active button {
-        background-color: #fff;
+        margin-top: 4px;
       }
     }
   }

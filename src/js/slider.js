@@ -1,11 +1,12 @@
-$(document).ready(function(){
-    $('.slick-slider').slick({
-      dots: true,
-      arrows: false,
-      appendDots: $('.slick-dots-custom'),
-      autoplay: true,
-      autoplaySpeed: 6000,
-      adaptiveHeight: true
-    });
-  });
-
+ $(document).ready(function(){
+            $('.testimonial-slider').slick({
+                dots: true,
+                arrows: false,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000
+            });
+        });
