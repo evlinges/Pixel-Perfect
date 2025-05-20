@@ -345,6 +345,7 @@
 .features-section .section-header .blue-line img {
   display: block;
   margin: 0 auto;
+  width: 65px;
 }
 .features-section .feature-item {
   padding: 30px 20px;
@@ -543,78 +544,65 @@
   }
 }
 
-.testimonials-section {
-  position: relative;
-  background: url("../img/background_slick.png") no-repeat center center/cover;
-  padding: 100px 0;
-  color: #fff;
-  overflow: hidden;
+.testimonial-section {
+  background: url("../img/background_slick.png") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 100px 0 60px;
 }
-.testimonials-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.65);
-  z-index: 1;
-}
-.testimonials-section .container {
-  position: relative;
-  z-index: 2;
-}
-.testimonials-section .section-subtitle {
-  font-size: 14px;
-  color: #00aef0;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.testimonials-section .section-title {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-.testimonials-section .blue-line {
-  display: block;
+.testimonial-section .testimonial {
+  max-width: 500px;
   margin: 0 auto 40px;
-  max-width: 100px;
+  text-align: center;
 }
-.testimonials-section .testimonial-slider {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-  text-align: left;
-}
-.testimonials-section .testimonial-slider .testimonial-item {
-  width: calc(50% - 15px);
+.testimonial-section .testimonial p {
   font-style: italic;
   font-size: 18px;
-  line-height: 1.6;
 }
-.testimonials-section .testimonial-slider .testimonial-author {
+.testimonial-section .testimonial .author {
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 }
-.testimonials-section .testimonial-slider .testimonial-author img {
-  width: 70px;
-  height: 70px;
+.testimonial-section .testimonial .author img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-right: 15px;
 }
-.testimonials-section .testimonial-slider .testimonial-author h4 {
+.testimonial-section .testimonial .author h6 {
   margin: 0;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 700;
 }
-.testimonials-section .testimonial-slider .testimonial-author span {
+.testimonial-section .testimonial .author p {
+  margin: 0;
+  font-size: 13px;
+}
+.testimonial-section .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+.testimonial-section .swiper-pagination-bullet-active {
+  background-color: white;
+}
+.testimonial-section .cta-panel {
+  background: #0b0b16;
+  text-align: center;
+  padding: 40px 20px;
+}
+.testimonial-section .cta-panel p {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.testimonial-section .cta-panel p strong {
   font-weight: bold;
-  font-size: 14px;
-  color: #ccc;
-  display: block;
-  margin-top: 4px;
+}
+.testimonial-section .cta-panel .btn {
+  margin: 5px 10px;
+  padding: 10px 25px;
 }
 
 .pricing-section {
@@ -622,7 +610,7 @@
   background-color: #fff;
 }
 .pricing-section .section-subtitle {
-  color: #007bff;
+  color: #008ed6;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
@@ -635,7 +623,7 @@
 .pricing-section .section-divider {
   width: 40px;
   height: 3px;
-  background-color: #007bff;
+  background-color: #008ed6;
   margin: 0 auto 40px;
 }
 .pricing-section .pricing-box {
@@ -669,12 +657,15 @@
   margin-top: 5px;
 }
 .pricing-section .pricing-box .pricing-body {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  color: #999999;
+  font-weight: 700;
   padding: 30px 20px;
   flex-grow: 1;
 }
 .pricing-section .pricing-box .pricing-body p {
   font-size: 14px;
-  color: #666;
+  color: #999999;
   margin-bottom: 20px;
 }
 .pricing-section .pricing-box .pricing-body .btn-order {
@@ -684,6 +675,54 @@
   border-width: 1px;
   border-radius: 4px;
   text-transform: uppercase;
+}
+
+.plan-name.highlight {
+  color: #008ed6;
+  transition: 0.3s;
+}
+
+.pricing-price {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.pricing-price span,
+.pricing-price .dollar,
+.pricing-price sup {
+  transition: color 0.3s ease;
+}
+.pricing-price.highlight {
+  background-color: #008ed6;
+  color: #fff !important;
+}
+.pricing-price.highlight span,
+.pricing-price.highlight .dollar,
+.pricing-price.highlight sup {
+  color: #fff !important;
+}
+
+.btn-order {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 2px solid #008ed6;
+  background-color: transparent;
+  color: #008ed6;
+  transition: all 0.3s ease;
+}
+.btn-order:hover {
+  background-color: #008ed6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-order.highlight {
+  background-color: #008ed6;
+  color: #fff;
+  border-color: #008ed6;
+  transition: 0.3s;
 }
 
 .contact-section {
