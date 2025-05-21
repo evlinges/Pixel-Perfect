@@ -1,6 +1,6 @@
 .contact-section {
   background: #f7f8fa;
-  padding-bottom: 0;
+   margin-bottom: 0 !important;
   .contact-subtitle {
     color: #008de6;
     font-weight: 700;
@@ -95,7 +95,7 @@
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 0;
+     margin-bottom: 0 !important;
     position: relative;
     z-index: 1;
     iframe {

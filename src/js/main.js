@@ -42,3 +42,9 @@ document.querySelectorAll('.pricing-box').forEach(box => {
 });
 
 });
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    this.classList.add('d-none');
+    document.querySelector('.contact-thankyou').classList.remove('d-none');
+  });
