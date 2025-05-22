@@ -43,7 +43,7 @@
 
 .logo-main {
   margin-left: -150px;
-  font-size: 35px;
+  font-size: 37px;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1;
@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* вирівнює текст всередині по низу */
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #434344; /* як у Lucid, сірий */
@@ -180,7 +180,13 @@
     pointer-events: auto;
   }
 }
-/* Герой (Банер) */
+body {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  background: #18171c;
+  margin: 0;
+  padding: 0;
+}
+
 .hero-section {
   background-image: url("../img/bg-header.png");
   position: relative;
@@ -228,13 +234,15 @@
 
 .hero-description {
   font-size: 21px;
-  color: #b2b2b2;
+  color: #888888;
+  font-weight: 550;
   margin-bottom: 36px;
 }
 
 .hero-buttons {
   display: flex;
   gap: 15px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
 }
 
 .hero-text-inner {
@@ -707,7 +715,7 @@
   border: none;
 }
 .testimonial-section .cta-panel__buttons .btn-primary:hover {
-  background: rgb(0, 148.8, 204);
+  background: #00baff, 10%;
 }
 @media (max-width: 991.98px) {
   .testimonial-section .cta-panel {

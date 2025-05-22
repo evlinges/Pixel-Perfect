@@ -1,5 +1,5 @@
 .pricing-section {
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: #fff;
 
   .section-subtitle {
@@ -8,82 +8,85 @@
     font-weight: 700;
     letter-spacing: 1px;
   }
+.blue-line {
+  img {
+position: relative;
+top: -5px;
+  }
 
   .section-title {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: 700px;
+    margin-bottom: 20px;
   }
 
   .section-divider {
-    width: 40px;
-    height: 3px;
+    width: 60px;
+    height: 4px;
     background-color: #008ed6;
-    margin: 0 auto 40px;
+    margin: 0 auto 50px;
   }
 
   .pricing-box {
-  border: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 50px;
 
-  .pricing-header {
-    padding: 20px 10px;
-    h5 {
+ .pricing-header {
+      padding: 20px 10px;
+      h5 {
+        font-weight: 700;
+        font-size: 22px;
+        margin: 0;
+      }
+    }
+
+   .pricing-price {
+      padding: 25px 10px;
+      font-size: 48px;
       font-weight: 700;
-      margin: 0;
+      color: #000;
+
+      .dollar {
+        font-size: 24px;
+        vertical-align: top;
+      }
+
+      sup {
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+        color: #999;
+        margin-top: 5px;
+      }
     }
-  }
-
-  .pricing-price {
-    padding: 25px 10px;
-    font-size: 36px;
-    font-weight: 700;
-    color: #000;
-
-    .dollar {
-      font-size: 20px;
-      vertical-align: top;
-    }
-
-    sup {
-      font-size: 14px;
-      font-weight: 400;
-      display: block;
-      color: #999;
-      margin-top: 5px;
-    }
-  }
-  
-  
-
   .pricing-body {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
-     color: #999999;
-      font-weight: 700;
-      
-    padding: 30px 20px;
-    flex-grow: 1;
-
-    p {
-      font-size: 14px;
+      font-family: 'Source Sans Pro', Arial, sans-serif;
       color: #999999;
-      margin-bottom: 20px;
-    }
-
-    .btn-order {
       font-weight: 700;
-      padding: 10px 20px;
-      font-size: 13px;
-      border-width: 1px;
-      border-radius: 4px;
-      text-transform: uppercase;
+      padding: 30px 0;
+      flex-grow: 1;
+
+  p {
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+
+      .btn-order {
+        font-weight: 700;
+        padding: 12px 24px;
+        font-size: 14px;
+        border-width: 2px;
+        border-radius: 4px;
+        text-transform: uppercase;
+      }
     }
   }
 }
-}
+
+
 .plan-name.highlight {
   color: #008ed6;
   transition: 0.3s;
@@ -109,13 +112,14 @@
     }
   }
 }
+
 .btn-order {
-font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   text-transform: uppercase;
-  padding: 10px 20px;
-  border-radius: 4px;
+  padding: 14px 28px;
+  border-radius: 6px;
   border: 2px solid #008ed6;
   background-color: transparent;
   color: #008ed6;
@@ -128,10 +132,16 @@ font-family: 'Source Sans Pro', Arial, sans-serif;
   }
 }
 
-
 .btn-order.highlight {
   background-color: #008ed6;
   color: #fff;
   border-color: #008ed6;
   transition: 0.3s;
+}
+@media (min-width: 768px) {
+  .pricing-section .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
 }
