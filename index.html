@@ -400,76 +400,70 @@
 </div>
 </section>
 
-  
-<section class="contact-section py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <div class="contact-subtitle text-primary mb-2">STAY IN TOUCH</div>
-      <h2 class="contact-title mb-2">Contact us</h2>
-      <div class="blue-line mx-auto mb-4">
-        <img src="src/img/blue_line.png" alt="divider" width="50" />
-      </div>
+<section class="contact-section">
+  <div class="container text-center">
+    <p class="contact-subtitle">STAY IN TOUCH</p>
+    <h2 class="contact-title">Contact us</h2>
+    <div class="blue-line">
+      <img src="src/img/blue_line.png" alt="line">
     </div>
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-4 col-12 mb-3 mb-md-0 text-center">
-        <a href="tel:+14121245678" class="contact-info-link d-inline-block" title="Call us">
-          <img src="src/img/icon_iphone.png" alt="Phone" class="contact-icon-img">
-        </a>
-        <div class="contact-info-text mt-2">
-          <div>Phone: (415) 124-5678</div>
-          <div>Fax: (412) 123-8290</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-12 mb-3 mb-md-0 text-center">
-        <a href="https://maps.google.com/?q=1001 Brickell Bay Dr, Suite 1900, Miami, FL 33131" target="_blank" class="contact-info-link d-inline-block" title="Open address in Google Maps">
-          <img src="src/img/icon_map.png" alt="Address" class="contact-icon-img">
-        </a>
-        <div class="contact-info-text mt-2">
-          <div>1001 Brickell Bay Dr.<br>Suite 1900<br>Miami, FL 33131</div>
-        </div>
-      </div>
-      <div class="col-md-4 col-12 text-center">
-        <a href="mailto:support@yourname.com" class="contact-info-link d-inline-block" title="Send email">
-          <img src="src/img/icon_messange.png" alt="Email" class="contact-icon-img">
-        </a>
-        <div class="contact-info-text mt-2">
-          support@yourname.com
-        </div>
-      </div>
+ <div class="contact-info-row">
+  <a href="tel:+14151245678" class="contact-info-block" tabindex="0">
+    <img src="src/img/icon_iphone.png" alt="Phone" class="contact-icon-img" />
+    <div class="contact-info-text">
+      Phone: (415) 124-5678<br>
+      Fax: (412) 123-8290
     </div>
-    <!-- Форма -->
-    <div class="row justify-content-center mb-4">
-      <div class="col-lg-8">
-        <form class="contact-form" id="contactForm">
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" placeholder="Name *" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <input type="email" class="form-control" placeholder="Email *" required>
-            </div>
-            <div class="col-12 mb-3">
-              <input type="text" class="form-control" placeholder="Subject *" required>
-            </div>
-            <div class="col-12 mb-3">
-              <textarea class="form-control" rows="4" placeholder="Message *" required></textarea>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block send-btn">SEND MESSAGE</button>
-        </form>
-        <div class="contact-thankyou d-none">
-          <div class="thankyou-text">Дякуємо за звернення! Ми скоро з вами зв'яжемося.</div>
-        </div>
-      </div>
+  </a>
+  <a href="https://goo.gl/maps/..." target="_blank" class="contact-info-block" tabindex="0">
+    <img src="src/img/icon_map.png" alt="Location" class="contact-icon-img" />
+    <div class="contact-info-text">
+      5 Yangel Street<br>
+      Kyiv 03056<br>
+      Ukraine
     </div>
+  </a>
+  <a href="mailto:Support@username.com" class="contact-info-block" tabindex="0">
+    <img src="src/img/icon_messange.png" alt="Email" class="contact-icon-img" />
+    <div class="contact-info-text">
+      Support@username.com
+    </div>
+  </a>
+</div>
+
   </div>
-  <!-- Карта на всю ширину -->
+
   <div class="contact-map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.002738181689!2d-80.18904168497444!3d25.7644029836398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b69d3e3f7e6b%3A0x9d7b7f8b7b7b7b7b!2s1001%20Brickell%20Bay%20Dr%2C%20Miami%2C%20FL%2033131%2C%20USA!5e0!3m2!1sen!2sua!4v1680000000000!5m2!1sen!2sua"
-      width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <iframe src="https://maps.google.com/maps?q=Brickell%20Bay%20Dr%2C%20Miami%2C%20FL&t=&z=13&ie=UTF8&iwloc=&output=embed
+" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <div class="contact-form-wrapper">
+    <form class="contact-form">
+      <div class="form-grid">
+        <div class="form-left">
+          <input type="text" class="form-control" placeholder="NAME *" required>
+          <input type="email" class="form-control" placeholder="EMAIL *" required>
+          <input type="text" class="form-control" placeholder="SUBJECT *" required>
+        </div>
+        <div class="form-right">
+          <textarea class="form-control" placeholder="MESSAGE *" rows="6" required></textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="send-btn">SEND MESSAGE</button>
+      </div>
+    </form>
+  </div>
+  <div class="thankyou-modal" id="thankyou-modal">
+    <div class="thankyou-modal-content">
+      <div class="thankyou-title">Дякуємо!</div>
+      <div class="thankyou-text">Ваше повідомлення успішно надіслано.<br>Ми зв'яжемося з вами найближчим часом.</div>
+      <button class="thankyou-close" id="thankyou-close">OK</button>
+    </div>
   </div>
 </section>
+
 
 
 
