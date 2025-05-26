@@ -2,12 +2,26 @@
 /* === HEADER === */
 .site-header {
   position: absolute;
-  top: 15px;
+  top: 30px;
   left: 0;
   width: 100%;
-  padding: 10px 0;
-  background: transparent;
   z-index: 1000;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+/* При прокрутці - фіксоване меню, без фону */
+.site-header.scrolled {
+  position: fixed;
+  top: 0;
+}
+.site-header.scrolled .menu a {
+  color: #222;
+}
+.site-header.scrolled .burger span,
+.site-header.scrolled .burger::before,
+.site-header.scrolled .burger::after {
+  background-color: #222;
 }
 
 /* === NAVBAR === */
@@ -17,7 +31,7 @@
   justify-content: space-between;
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 10px 15px;
 }
 
 /* === LOGO === */
@@ -26,6 +40,7 @@
   align-items: flex-end;
   text-decoration: none;
   color: #fff;
+  pointer-events: none;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: #fff;
@@ -42,11 +57,11 @@
 }
 
 .logo-main {
-  font-size: 40px;
-  font-weight: 900;
+  font-size: 35px;
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
-  margin-left: -147px;
+  margin-left: 0;
 }
 
 .logo-sub {
@@ -57,7 +72,7 @@
   letter-spacing: 1px;
   color: #58585d;
   line-height: 1.1;
-  margin-bottom: 11px;
+  margin-bottom: 6px;
 }
 
 /* === BURGER ICON === */
@@ -69,10 +84,7 @@
   position: relative;
   z-index: 1100;
 }
-
-.burger span,
-.burger::before,
-.burger::after {
+.burger span, .burger::before, .burger::after {
   content: "";
   position: absolute;
   left: 0;
@@ -82,28 +94,22 @@
   border-radius: 2px;
   transition: transform 0.6s ease, opacity 0.3s ease;
 }
-
 .burger span {
   top: 9px;
 }
-
 .burger::before {
   top: 0;
 }
-
 .burger::after {
   bottom: 0;
 }
-
 .burger.active span {
   opacity: 0;
 }
-
 .burger.active::before {
   top: 9px;
   transform: rotate(720deg) rotate(45deg);
 }
-
 .burger.active::after {
   bottom: 9px;
   transform: rotate(720deg) rotate(-45deg);
@@ -114,11 +120,7 @@
   display: flex;
   align-items: center;
   gap: 25px;
-  margin-left: auto;
-  margin-right: -130px;
-  background: transparent;
 }
-
 .menu a {
   position: relative;
   color: #fff;
@@ -127,8 +129,8 @@
   font-size: 18px;
   padding: 0 4px;
   display: inline-block;
+  transition: color 0.3s ease;
 }
-
 .menu a::after {
   content: "";
   position: absolute;
@@ -141,23 +143,179 @@
   transition: opacity 0.2s ease;
   border-radius: 1px;
 }
-
-.menu a.active::after,
-.menu a:hover::after,
-.menu a:focus::after {
+.menu a.active::after, .menu a:hover::after, .menu a:focus::after {
   opacity: 1;
 }
 
-.site-header.scrolled .menu a {
-  color: #000;
-}
-.site-header.scrolled .burger span,
-.site-header.scrolled .burger::before,
-.site-header.scrolled .burger::after {
-  background-color: #000;
+/* Коли прокрутили — ховаємо логотип */
+.site-header.scrolled .navbar-brand {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* === MOBILE STYLES === */
+/* Початковий стан — показуємо */
+.navbar-brand {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* === MOBILE MENU === */
+@media (max-width: 991.98px) {
+  .burger {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #18171c;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 80px 0 30px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+  .menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navbar {
+    padding: 0 15px;
+    max-width: 1170px;
+    margin: 0 auto;
+    height: 60px;
+  }
+  .logo-main {
+    font-size: 32px;
+    margin-left: 0;
+  }
+  .logo-sub {
+    font-size: 10px;
+    margin-bottom: 7px;
+  }
+  .navbar-brand {
+    margin: 0;
+    position: static;
+    transform: none;
+  }
+}
+.hero-section {
+  background-image: url("../img/bg-header.png");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 180px 0 100px 0;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-section .container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin-left: 0;
+}
+
+.hero-text-inner {
+  margin-left: 0;
+  padding-right: 40px;
+}
+
+.hero-subtitle {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #008de6;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: block;
+  margin-left: 4px;
+}
+
+.hero-title {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #888888;
+  font-weight: 550;
+  margin-bottom: 36px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.hero-image {
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-buttons .btn-primary {
+  background: #008ed6;
+  border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+  background: #0020d6;
+}
+
+.hero-buttons .btn-outline-light:hover {
+  background: #fff;
+  color: #008de6;
+}
+
+/* Адаптив */
+@media (max-width: 1199.98px) {
+  .navbar,
+  .hero-section .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 @media (max-width: 991.98px) {
   .burger {
     display: block;
@@ -168,7 +326,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: auto;
     background: #18171c;
     flex-direction: column;
@@ -196,6 +354,7 @@
     margin: 0 auto;
     display: flex;
     height: 60px;
+    box-sizing: border-box;
   }
   .logo-main {
     font-size: 32px;
@@ -212,136 +371,14 @@
     top: auto;
     transform: none;
   }
-}
-body {
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  background: #18171c;
-  margin: 0;
-  padding: 0;
-}
-
-.hero-section {
-  background-image: url("../img/bg-header.png");
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding: 180px 0 100px 0;
-  color: #fff;
-  z-index: 1;
-}
-
-.hero-section .container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
-  display: flex;
-  align-items: center;
-  overflow: visible;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  max-width: 600px;
-  margin-left: -150px;
-}
-
-.hero-subtitle {
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #008de6;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  display: block;
-  margin-left: 4px;
-}
-
-.hero-title {
-  font-size: 60px;
-  font-weight: 700;
-  margin-bottom: 50px;
-  line-height: 1.1;
-}
-
-.hero-description {
-  font-size: 21px;
-  color: #888888;
-  font-weight: 550;
-  margin-bottom: 36px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  font-family: "Source Sans Pro", Arial, sans-serif;
-}
-
-.hero-text-inner {
-  margin-left: -150px; /* зміщення тексту вліво, підбери під свій дизайн */
-  padding-right: 40px; /* щоб телефон не "прилипав" до тексту */
-}
-
-.hero-image {
-  margin-left: auto;
-  margin-right: 0;
-  display: flex;
-  justify-content: flex-end;
-  /* Якщо треба, додай padding-right або negative margin */
-  padding-right: 30px; /* підбери під свій макет */
-}
-
-.features-section {
-  position: relative;
-  background: #fff;
-  margin-top: -60px; /* негативний margin накладає білий блок на попередній */
-  z-index: 2;
-  border-radius: 0 0 8px 8px; /* якщо треба скруглення */
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06); /* легка тінь, як у Lucid */
-}
-
-@media (max-width: 991.98px) {
-  .hero-text-inner {
-    margin-left: 0;
-    padding-right: 0;
-  }
-}
-.hero-buttons .btn {
-  padding: 12px 30px;
-  border: 1px solid #fff;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
-  background: transparent;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-
-.hero-buttons .btn-primary {
-  background: #008ed6;
-  border: none;
-}
-
-.hero-buttons .btn-primary:hover {
-  background: #0020d6;
-}
-
-.hero-buttons .btn-outline-light:hover {
-  background: #fff;
-  color: #008de6;
-}
-
-/* Мобільна адаптація для героя */
-@media (max-width: 767.98px) {
   .hero-section {
     padding: 120px 0 80px;
   }
   .hero-section .container {
     flex-direction: column;
     text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .hero-text {
     max-width: 100%;
@@ -354,6 +391,26 @@ body {
   }
   .hero-buttons {
     flex-direction: column;
+  }
+  .hero-text-inner {
+    margin-left: 0;
+    padding-right: 0;
+  }
+  .hero-image {
+    max-width: 300px;
+    margin: 30px auto 0 auto;
+    padding-right: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding: 70px 0 40px 0;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-description {
+    font-size: 15px;
   }
 }
 .features-section {
@@ -652,7 +709,7 @@ body {
 }
 .testimonial-section .section-title {
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
@@ -853,7 +910,7 @@ body {
 }
 .pricing-section .blue-line .section-title {
   font-size: 36px;
-  font-weight: 700px;
+  font-weight: 800;
   margin-bottom: 20px;
 }
 .pricing-section .blue-line .section-divider {
