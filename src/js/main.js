@@ -1,54 +1,70 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Бургер-меню
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+  }
+
+  // Ховаємо логотип при відкритті мобільного меню Bootstrap
   const navCollapse = document.getElementById('mainNav');
   const logo = document.querySelector('.navbar-brand');
 
-  // Слухачі на Bootstrap події
-  navCollapse.addEventListener('shown.bs.collapse', function () {
-    logo.style.display = 'none'; // ховати лого при відкритті
-  });
+  if (navCollapse && logo) {
+    navCollapse.addEventListener('shown.bs.collapse', function () {
+      logo.style.display = 'none';
+    });
 
-  navCollapse.addEventListener('hidden.bs.collapse', function () {
-    logo.style.display = 'flex'; // показати знову при закритті
-  });
+    navCollapse.addEventListener('hidden.bs.collapse', function () {
+      logo.style.display = 'flex';
+    });
+  }
 
-  // решта твого коду...
-  document.querySelectorAll('.btn-order').forEach(button => {
+  const pricingBoxes = document.querySelectorAll('.pricing-box');
+
+pricingBoxes.forEach(box => {
+  const name = box.querySelector('.plan-name');
+  const price = box.querySelector('.pricing-price');
+  const button = box.querySelector('.btn-order');
+
+  if (name && price && button) {
+    // 🔹 Наведення на ціну
+    price.addEventListener('mouseenter', () => {
+      name.classList.add('highlight');
+      price.classList.add('highlight');
+    });
+
+    price.addEventListener('mouseleave', () => {
+      name.classList.remove('highlight');
+      price.classList.remove('highlight');
+    });
+
+    // 🔹 Наведення на кнопку
     button.addEventListener('mouseenter', () => {
-      const box = button.closest('.pricing-box');
-      const name = box.querySelector('.plan-name');
-      const price = box.querySelector('.pricing-price');
-
       name.classList.add('highlight');
       price.classList.add('highlight');
       button.classList.add('highlight');
     });
 
     button.addEventListener('mouseleave', () => {
-      const box = button.closest('.pricing-box');
-      const name = box.querySelector('.plan-name');
-      const price = box.querySelector('.pricing-price');
-
       name.classList.remove('highlight');
       price.classList.remove('highlight');
       button.classList.remove('highlight');
     });
-  });
-
-  document.querySelectorAll('.pricing-box').forEach(box => {
-    const name = box.querySelector('.plan-name');
-    const price = box.querySelector('.pricing-price');
-    const btn = box.querySelector('.btn-order');
-
-    btn.addEventListener('mouseenter', () => {
-      name.classList.add('active');
-      price.classList.add('active');
-      btn.classList.add('active');
-    });
-
-    btn.addEventListener('mouseleave', () => {
-      name.classList.remove('active');
-      price.classList.remove('active');
-      btn.classList.remove('active');
-    });
-  });
+  }
 });
+
+});
+window.addEventListener("scroll", function () {
+  const header = document.querySelector(".site-header");
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+

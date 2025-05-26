@@ -1,181 +1,232 @@
+/* === HEADER === */
 .site-header {
-  position: absolute;
-  top: 0;
+ position: relative; 
+ top: 15px;
   left: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
+  background: transparent; // прозорий фон
   z-index: 1000;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* === LOGO === */
+.navbar-brand {
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.logo-text {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.logo-main {
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-left: -147px;
+}
+
+.logo-sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #58585d;
+  line-height: 1.1;
+  margin-bottom: 11px;
+}
+
+/* === BURGER ICON === */
+.burger {
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  z-index: 1100;
+}
+
+.burger span,
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.burger span {
+  top: 9px;
+}
+
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.burger.active span {
+  opacity: 0;
+}
+
+.burger.active::before {
+  top: 9px;
+  transform: rotate(720deg) rotate(45deg);
+}
+
+.burger.active::after {
+  bottom: 9px;
+  transform: rotate(720deg) rotate(-45deg);
+}
+
+/* === MENU (desktop) === */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: auto;
+  margin-right: -130px;
   background: transparent;
 }
 
-.navbar {
-  padding: 0;
-
-  .site-header .container {
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
- .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo-text {
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-
-    .logo-main {
-      font-size: 37px;
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-
-    .logo-sub {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #434344;
-      line-height: 1.1;
-    }
-  }
-
-  .navbar-toggler {
-    border: none;
-    background: none;
-    padding: 0;
-    outline: none !important;
-    z-index: 10000;
-    margin-left: auto;
-
-    .burger-icon {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 20px;
-      width: 26px;
-
-      span {
-        height: 3px;
-        background: #fff;
-        border-radius: 2px;
-        transition: 0.3s ease;
-      }
-    }
-
-    &.collapsed .burger-icon span:nth-child(1) {
-      transform: none;
-    }
-
-    &.collapsed .burger-icon span:nth-child(2) {
-      opacity: 1;
-    }
-
-    &.collapsed .burger-icon span:nth-child(3) {
-      transform: none;
-    }
-
-    .burger-icon span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .burger-icon span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .burger-icon span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-  }
-
-  .navbar-nav {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-
- .nav-link {
-      color: #fff !important;
-      font-weight: 600;
-      font-size: 18px;
-      position: relative;
-      padding: 0 4px;
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 10%;
-        right: 10%;
-        bottom: -4px;
-        height: 4px;
-        background: #008de6;
-        opacity: 0;
-        transition: 0.2s;
-        border-radius: 1px;
-      }
-
-      &:hover::after,
-      &.active::after {
-        opacity: 1;
-      }
-    }
-  }
-  }
-.nav-container {
-  display: flex;
-  align-items: flex-start; // логотип і меню по верхньому краю
-  justify-content: space-between;
-  padding-left: 0;
-  padding-right: 0;
-  height: 110px; // висота хедера як на макеті
-  max-width: 1170px;
-  margin: 0 auto;
+.menu a {
   position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 4px;
+  display: inline-block;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -4px;
+  height: 4px;
+  background: #008de6;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 1px;
+}
+
+.menu a.active::after,
+.menu a:hover::after,
+.menu a:focus::after {
+  opacity: 1;
+}
+.site-header.scrolled {
+
+
+  .menu a {
+    color: #000; // чорні посилання
+  }
+
+  .burger span,
+  .burger::before,
+  .burger::after {
+    background-color: #000; // чорна бургер-іконка
+  }
 }
 
 
-/* Mobile menu */
+/* === MOBILE STYLES === */
 @media (max-width: 991.98px) {
-  .navbar-collapse {
+  .burger {
+    display: block;
+    position: relative;
+    z-index: 1100;
+  }
+
+  .menu {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    background-color: #18171c;
-    padding: 20px 0 30px;
-    z-index: 9999;
-    text-align: center;
-    width: 100%;
-    border-bottom: 1px solid #333;
-
-    .navbar-nav {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
+    width: 100vw;
+    height: auto;
+    background: #18171c;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 80px 0 30px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    border: none;
+    box-shadow: none;
+    display: flex; // важливо: flex, щоб не ламалась структура
   }
 
- .navbar-brand {
-    margin-left: 15px;
-    z-index: 10000;
+  .menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar {
+    justify-content: space-between; // Лого зліва, бургер справа
+    align-items: center;
+    padding: 0 15px;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    height: 60px; // або твоя висота
+  }
+  
+
+  .logo-main {
+    font-size: 32px;
+    margin-left: 0; // прибираємо зсув
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    margin-bottom: 7px;
+  }
+
+  .navbar-brand {
+    margin: 0;
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
   }
 }
 
-  .navbar-toggler {
-    z-index: 10000;
-  }
 
 
 
-/* Align logo with hero text */
-@media (min-width: 992px) {
-  .navbar .container {
-    padding-left: 60px; // як у hero секції
-    padding-right: 60px;
-  }
-}

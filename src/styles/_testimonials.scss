@@ -2,10 +2,10 @@
   background: url('../img/background_slick.png') no-repeat center center;
   background-size: cover;
   color: #fff;
-  padding: 140px 0 0 0;
+  padding: 100px 0 60px 0;
 
   .testimonial-slider-wrapper {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -14,15 +14,15 @@
 
   .section-subtitle {
     color: #00aaff;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     text-transform: uppercase;
   }
 
   .section-title {
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 800;
     margin-bottom: 12px;
     letter-spacing: -0.5px;
@@ -39,10 +39,11 @@
   .testimonial-row {
     display: flex;
     justify-content: center;
-    gap: 70px;
+    gap: 120px;
     margin-bottom: 60px;
+    padding: 0 30px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 991px) {
       flex-direction: column;
       align-items: center;
       gap: 40px;
@@ -50,16 +51,16 @@
   }
 
   .testimonial {
-    max-width: 500px;
+    max-width: 600px;
     text-align: left;
     padding: 0 10px;
 
     .testimonial-text {
-      font-size: 22px;
+      font-size: 26px;
       font-style: italic;
-      line-height: 1.6;
+      line-height: 1.8;
       font-weight: 400;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: #ffffff;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
@@ -70,8 +71,8 @@
       gap: 16px;
 
       img {
-        width: 52px;
-        height: 52px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         border: 2px solid #fff;
         object-fit: cover;
@@ -79,14 +80,14 @@
 
       h6 {
         margin: 0 0 2px 0;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
         color: #fff;
       }
 
       p {
         margin: 0;
-        font-size: 13px;
+        font-size: 14px;
         text-transform: uppercase;
         color: #bfc5d1;
         font-weight: 600;
@@ -117,6 +118,50 @@
     }
   }
 
+  @media (max-width: 600px) {
+    padding: 80px 0 0 0;
+
+    .section-title {
+      font-size: 32px;
+    }
+
+    .blue-line {
+      margin-bottom: 32px;
+    }
+
+    .testimonial-row {
+      gap: 32px;
+      padding: 0 10px;
+    }
+
+    .testimonial .testimonial-text {
+      font-size: 20px;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+    }
+
+    .author img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .author h6 {
+      font-size: 16px;
+    }
+
+    .author p {
+      font-size: 12px;
+    }
+  }
+}
+.blue-word {
+  color: #008ed6;
+}
+
+
   // --- CTA Panel (Updated based on your layout)
 .cta-panel {
   background: #18171c;
@@ -127,6 +172,9 @@
   min-height: 130px;
   font-family: 'Source Sans Pro', sans-serif;
   border-top: 1px solid #2c2b30;
+  position: relative;
+  top: 100px; // або більше — це "опускає" панель візуально
+  z-index: 3;
 
   &__text {
     color: #fff;
@@ -171,74 +219,20 @@
 
       &:hover {
         background: #fff;
-        color: #18171c;
+        color: #008ed6;
       }
     }
 
     .btn-primary {
-      background: #00baff;
+      background: #008ed6;
       color: #fff;
       border: none;
 
       &:hover {
-        background:(#00baff, 10%);
-      }
-    }
+    background-color: #0020d6; // трохи темніший відтінок
+   
+    
   }
-
-  // Responsive
-  @media (max-width: 991.98px) {
-    flex-direction: column;
-    text-align: center;
-    gap: 24px;
-    padding: 40px 30px;
-
-    &__text {
-      padding-left: 0;
-      max-width: 100%;
-
-      strong {
-        font-size: 22px;
-      }
-
-      span {
-        font-size: 20px;
-      }
-    }
-
-    &__buttons {
-      flex-direction: column;
-
-      .btn {
-        min-width: 200px;
-      }
-    }
-  }
-}
-
-
-  @media (max-width: 600px) {
-    padding: 80px 0 0 0;
-
-    .section-title {
-      font-size: 28px;
-    }
-
-    .blue-line {
-      margin-bottom: 32px;
-    }
-
-    .testimonial-row {
-      gap: 24px;
-    }
-
-    .testimonial .testimonial-text {
-      font-size: 18px;
-    }
-
-    .swiper-pagination .swiper-pagination-bullet {
-      width: 14px;
-      height: 14px;
     }
   }
 }
