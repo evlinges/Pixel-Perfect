@@ -1,55 +1,80 @@
 @charset "UTF-8";
-/* === HEADER === */
+/* === Стиль хедера === */
 .site-header {
-  position: fixed;
-  top: 15px;
+  position: absolute;
+  top: 30px;
   left: 0;
   width: 100%;
-  padding: 10px 0;
-  background: transparent;
   z-index: 1000;
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  /* Хедер після скролу */
+}
+.site-header.scrolled {
+  position: fixed;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.site-header.scrolled .menu a {
+  color: #222;
+}
+.site-header.scrolled .burger span,
+.site-header.scrolled .burger::before,
+.site-header.scrolled .burger::after {
+  background-color: #222;
+}
+.site-header.scrolled .navbar-brand {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
 }
 
-/* === NAVBAR === */
+/* === Контейнер меню (макс. ширина макету) === */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 15px 20px;
+  /* Менше падінгу на мобільному */
+}
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 10px 20px;
+    height: 60px;
+  }
 }
 
-/* === LOGO === */
+/* === Логотип === */
 .navbar-brand {
   display: flex;
   align-items: flex-end;
   text-decoration: none;
   color: #fff;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin: 0;
+  position: static;
+  transform: none;
 }
-.navbar-brand:hover, .navbar-brand:focus {
-  color: #fff;
-  text-decoration: none;
-  background: none;
-  box-shadow: none;
-  outline: none;
-}
-
-.logo-text {
+.navbar-brand .logo-text {
   display: flex;
   align-items: flex-end;
   gap: 8px;
 }
-
-.logo-main {
-  font-size: 40px;
-  font-weight: 900;
+.navbar-brand .logo-text .logo-main {
+  font-size: 35px;
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
-  margin-left: -147px;
 }
-
-.logo-sub {
+@media (max-width: 991.98px) {
+  .navbar-brand .logo-text .logo-main {
+    font-size: 30px;
+  }
+}
+.navbar-brand .logo-text .logo-sub {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -57,10 +82,16 @@
   letter-spacing: 1px;
   color: #58585d;
   line-height: 1.1;
-  margin-bottom: 11px;
+  margin-bottom: 6px;
+}
+@media (max-width: 991.98px) {
+  .navbar-brand .logo-text .logo-sub {
+    font-size: 10px;
+    margin-bottom: 6px; /* дубль можна об'єднати, але тут ок */
+  }
 }
 
-/* === BURGER ICON === */
+/* === Бургер-меню (іконка) === */
 .burger {
   width: 30px;
   height: 22px;
@@ -68,11 +99,10 @@
   display: none;
   position: relative;
   z-index: 1100;
+  /* Активний стан бургер-іконки */
+  /* Показуємо бургер на мобільних */
 }
-
-.burger span,
-.burger::before,
-.burger::after {
+.burger span, .burger::before, .burger::after {
   content: "";
   position: absolute;
   left: 0;
@@ -82,52 +112,49 @@
   border-radius: 2px;
   transition: transform 0.6s ease, opacity 0.3s ease;
 }
-
 .burger span {
   top: 9px;
 }
-
 .burger::before {
   top: 0;
 }
-
 .burger::after {
   bottom: 0;
 }
-
 .burger.active span {
   opacity: 0;
 }
-
 .burger.active::before {
   top: 9px;
   transform: rotate(720deg) rotate(45deg);
 }
-
 .burger.active::after {
   bottom: 9px;
   transform: rotate(720deg) rotate(-45deg);
 }
+@media (max-width: 991.98px) {
+  .burger {
+    display: block;
+  }
+}
 
-/* === MENU (desktop) === */
+/* === Основне меню (desktop) === */
 .menu {
   display: flex;
   align-items: center;
-  gap: 25px;
-  margin-left: auto;
-  margin-right: -130px;
+  gap: 40px;
+  /* Мобільне меню — фулскрін */
 }
-
 .menu a {
   position: relative;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
-  padding: 0 4px;
-  display: inline-block;
+  padding: 8px 4px;
+  transition: color 0.3s ease;
+  /* Підкреслення при hover/active */
 }
-
 .menu a::after {
   content: "";
   position: absolute;
@@ -140,113 +167,52 @@
   transition: opacity 0.2s ease;
   border-radius: 1px;
 }
-
-.menu a.active::after,
-.menu a:hover::after,
-.menu a:focus::after {
+.menu a.active::after, .menu a:hover::after, .menu a:focus::after {
   opacity: 1;
 }
-
-.site-header.scrolled {
-  background-color: #fff;
-}
-.site-header.scrolled .menu a {
-  color: #000;
-}
-.site-header.scrolled .burger span,
-.site-header.scrolled .burger::before,
-.site-header.scrolled .burger::after {
-  background-color: #000;
-}
-
-/* === MOBILE STYLES === */
 @media (max-width: 991.98px) {
-  .burger {
-    display: block;
-    position: relative;
-    z-index: 1100;
-  }
   .menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     background: #18171c;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    padding: 80px 0 30px;
+    justify-content: center;
+    gap: 30px;
+    padding: 100px 20px 40px;
     margin: 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 1000;
-    border: none;
-    box-shadow: none;
-    display: flex;
+  }
+  .menu a {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
   }
   .menu.active {
     opacity: 1;
     pointer-events: auto;
   }
-  .navbar {
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    max-width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    height: 60px;
-  }
-  .logo-main {
-    font-size: 32px;
-    margin-left: 0;
-  }
-  .logo-sub {
-    font-size: 10px;
-    margin-bottom: 7px;
-  }
-  .navbar-brand {
-    margin: 0;
-    position: static;
-    left: auto;
-    top: auto;
-    transform: none;
-  }
-}
-body {
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  background: #18171c;
-  margin: 0;
-  padding: 0;
 }
 
 .hero-section {
-  background-image: url("../img/bg-header.png");
-  position: relative;
+  background-image: url("../img/background_header.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding: 180px 0 100px 0;
+  position: relative;
+  padding: 160px 0 100px;
   color: #fff;
+  z-index: 1;
 }
 
-.hero-section .container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
-  display: flex;
-  align-items: center;
-  overflow: visible;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  max-width: 600px;
-  margin-left: -150px;
+.hero-text-inner {
+  padding-right: 40px;
 }
 
 .hero-subtitle {
@@ -257,19 +223,17 @@ body {
   letter-spacing: 1.3px;
   text-transform: uppercase;
   margin-bottom: 24px;
-  display: block;
-  margin-left: 4px;
 }
 
 .hero-title {
-  font-size: 60px;
+  font-size: 45px;
   font-weight: 700;
   margin-bottom: 50px;
   line-height: 1.1;
 }
 
 .hero-description {
-  font-size: 21px;
+  font-size: 18px;
   color: #888888;
   font-weight: 550;
   margin-bottom: 36px;
@@ -280,36 +244,6 @@ body {
   gap: 15px;
   font-family: "Source Sans Pro", Arial, sans-serif;
 }
-
-.hero-text-inner {
-  margin-left: -150px; /* зміщення тексту вліво, підбери під свій дизайн */
-  padding-right: 40px; /* щоб телефон не "прилипав" до тексту */
-}
-
-.hero-image {
-  margin-left: auto;
-  margin-right: 0;
-  display: flex;
-  justify-content: flex-end;
-  /* Якщо треба, додай padding-right або negative margin */
-  padding-right: 30px; /* підбери під свій макет */
-}
-
-.features-section {
-  position: relative;
-  background: #fff;
-  margin-top: -60px; /* негативний margin накладає білий блок на попередній */
-  z-index: 2;
-  border-radius: 0 0 8px 8px; /* якщо треба скруглення */
-  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06); /* легка тінь, як у Lucid */
-}
-
-@media (max-width: 991.98px) {
-  .hero-text-inner {
-    margin-left: 0;
-    padding-right: 0;
-  }
-}
 .hero-buttons .btn {
   padding: 12px 30px;
   border: 1px solid #fff;
@@ -319,33 +253,38 @@ body {
   background: transparent;
   transition: all 0.3s;
   text-decoration: none;
+  cursor: pointer;
 }
-
 .hero-buttons .btn-primary {
   background: #008ed6;
   border: none;
 }
-
 .hero-buttons .btn-primary:hover {
   background: #0020d6;
 }
-
 .hero-buttons .btn-outline-light:hover {
   background: #fff;
   color: #008de6;
 }
 
-/* Мобільна адаптація для героя */
-@media (max-width: 767.98px) {
+.hero-image {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Адаптив */
+@media (max-width: 991.98px) {
   .hero-section {
     padding: 120px 0 80px;
-  }
-  .hero-section .container {
-    flex-direction: column;
     text-align: center;
   }
-  .hero-text {
-    max-width: 100%;
+  .hero-text-inner {
+    padding-right: 0;
   }
   .hero-title {
     font-size: 40px;
@@ -355,21 +294,36 @@ body {
   }
   .hero-buttons {
     flex-direction: column;
+    align-items: center;
+  }
+  .hero-image {
+    justify-content: center;
+    margin-top: 30px;
+    padding-right: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding: 70px 0 40px;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-description {
+    font-size: 15px;
   }
 }
 .features-section {
   position: relative;
   background: #fff;
-  margin-top: -60px;
   z-index: 2;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
-  padding: 300px 0;
+  padding: 0;
   font-family: "Source Sans Pro", sans-serif;
 }
 .features-section .section-header {
   text-align: center;
-  margin-bottom: 80px;
 }
 .features-section .section-header .section-subtitle {
   font-weight: 600;
@@ -381,8 +335,8 @@ body {
 .features-section .section-header .section-title {
   font-size: 32px;
   font-weight: 600;
-  margin-top: 10px;
-  color: #18171c;
+  margin: 10px 0 0;
+  color: #171717;
 }
 .features-section .section-header .blue-line {
   margin: 100px auto 0;
@@ -422,7 +376,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #1a1a1a;
-  margin-bottom: 15px;
+  margin: 0 0 15px;
 }
 .features-section .feature-item .feature-text {
   font-size: 16px;
@@ -443,7 +397,7 @@ body {
     padding: 120px 0;
   }
   .features-section .section-header {
-    margin-bottom: 50px;
+    margin: 0 0 50px;
   }
   .features-section .section-header .section-title {
     font-size: 28px;
@@ -496,10 +450,7 @@ body {
 
 .details-section {
   background: #fff;
-  padding: 100px 0 80px 0;
-  /* Збільшене зображення для лежачого телефону */
-  /* Синя лінія - вирівнювання по лівому краю */
-  /* Сірий фон на всю ширину */
+  padding: 100px 0 80px;
 }
 .details-section .details-item {
   margin-bottom: 80px;
@@ -531,46 +482,43 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   font-family: "Source Sans Pro", Arial, sans-serif;
 }
 .details-section .details-title {
   font-size: 36px;
   font-weight: 900;
-  margin-bottom: 18px;
+  margin: 0 0 18px;
   color: #232323;
   font-family: "Source Sans Pro", Arial, sans-serif;
   line-height: 1.2;
 }
 .details-section .blue-line {
-  margin-bottom: 24px;
-  margin-top: -6px; /* як у макеті */
-  /* Вирівнюємо по лівому краю */
+  margin: -6px 0 24px;
 }
 .details-section .blue-line img {
   width: 60px;
   height: 4px;
   display: block;
-  margin: 0; /* без auto! */
+  margin: 0;
 }
 .details-section .details-desc {
   color: #999999;
   font-size: 16px;
-  margin-bottom: 22px;
   line-height: 1.7;
+  margin: 0 0 22px;
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 700;
 }
 .details-section .details-list {
   list-style: none;
   padding: 0;
-  margin: 0;
-  margin-top: 18px;
+  margin: 18px 0 0;
 }
 .details-section .details-list li {
   color: #232323;
   font-size: 17px;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   display: flex;
   align-items: center;
   font-family: "Source Sans Pro", Arial, sans-serif;
@@ -592,14 +540,13 @@ body {
   width: 100vw;
   position: relative;
   left: 50%;
-  right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   padding: 80px 0;
 }
 @media (max-width: 991.98px) {
   .details-section {
-    padding: 60px 0 40px 0;
+    padding: 60px 0 40px;
   }
   .details-section .details-item {
     flex-direction: column !important;
@@ -632,7 +579,7 @@ body {
   background: url("../img/background_slick.png") no-repeat center center;
   background-size: cover;
   color: #fff;
-  padding: 100px 0 60px 0;
+  padding: 100px 0 60px;
 }
 .testimonial-section .testimonial-slider-wrapper {
   max-width: 1300px;
@@ -651,14 +598,14 @@ body {
 }
 .testimonial-section .section-title {
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
 .testimonial-section .blue-line {
   width: 61px;
   height: 4px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 60px;
   background: url("../img/blue_line.png") no-repeat center;
   background-size: contain;
 }
@@ -687,7 +634,7 @@ body {
   line-height: 1.8;
   font-weight: 400;
   margin-bottom: 40px;
-  color: #ffffff;
+  color: #fff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 .testimonial-section .testimonial .author {
@@ -737,7 +684,7 @@ body {
 }
 @media (max-width: 600px) {
   .testimonial-section {
-    padding: 80px 0 0 0;
+    padding: 80px 0 0;
   }
   .testimonial-section .section-title {
     font-size: 32px;
@@ -851,7 +798,7 @@ body {
 }
 .pricing-section .blue-line .section-title {
   font-size: 36px;
-  font-weight: 700px;
+  font-weight: 800;
   margin-bottom: 20px;
 }
 .pricing-section .blue-line .section-divider {
@@ -912,28 +859,31 @@ body {
   border-radius: 4px;
   text-transform: uppercase;
 }
-.pricing-section .plan-name.highlight {
+
+.plan-name.highlight {
   color: #008ed6;
   transition: 0.3s;
 }
-.pricing-section .pricing-price {
+
+.pricing-price {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.pricing-section .pricing-price span,
-.pricing-section .pricing-price .dollar,
-.pricing-section .pricing-price sup {
+.pricing-price span,
+.pricing-price .dollar,
+.pricing-price sup {
   transition: color 0.3s ease;
 }
-.pricing-section .pricing-price.highlight {
+.pricing-price.highlight {
   background-color: #008ed6;
   color: #fff !important;
 }
-.pricing-section .pricing-price.highlight span,
-.pricing-section .pricing-price.highlight .dollar,
-.pricing-section .pricing-price.highlight sup {
+.pricing-price.highlight span,
+.pricing-price.highlight .dollar,
+.pricing-price.highlight sup {
   color: #fff !important;
 }
-.pricing-section .btn-order {
+
+.btn-order {
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -945,34 +895,33 @@ body {
   color: #008ed6;
   transition: all 0.3s ease;
 }
-.pricing-section .btn-order:hover {
+.btn-order:hover {
   background-color: #008ed6;
   color: #fff;
   text-decoration: none;
 }
-.pricing-section .btn-order.highlight {
+
+.btn-order.highlight {
   background-color: #008ed6;
   color: #fff;
   border-color: #008ed6;
   transition: 0.3s;
 }
+
 @media (min-width: 768px) {
-  .pricing-section .pricing-section .col-md-3 {
+  .pricing-section .col-md-3 {
     flex: 0 0 25%;
     max-width: 25%;
   }
 }
-
 .contact-section {
   background: #f7f8fa;
   position: relative;
   padding-top: 60px;
-  padding-bottom: 0;
   min-height: 950px;
 }
 .contact-section .container {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
 }
 .contact-section .contact-subtitle {
   color: #008de6;
@@ -990,7 +939,7 @@ body {
 }
 .contact-section .blue-line img {
   display: block;
-  margin: 18px auto 0 auto;
+  margin: 18px auto 0;
   height: 4px;
 }
 .contact-section .contact-info-row {
@@ -998,8 +947,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 180px;
-  margin: 60px 0 0 0;
-  margin-bottom: 300px;
+  margin: 60px 0 300px;
 }
 @media (max-width: 1200px) {
   .contact-section .contact-info-row {
@@ -1021,22 +969,14 @@ body {
   }
 }
 .contact-section .contact-info-block {
-  flex: 1 1 0;
   max-width: 300px;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  text-decoration: none;
-  outline: none;
   background: transparent;
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
-}
-.contact-section .contact-info-block:hover .contact-icon-img, .contact-section .contact-info-block:focus .contact-icon-img {
-  filter: none;
-  opacity: 0.8;
 }
 .contact-section .contact-info-block:hover .contact-info-text, .contact-section .contact-info-block:focus .contact-info-text {
   color: #008de6;
@@ -1045,82 +985,67 @@ body {
   width: 32px;
   height: 32px;
   margin-bottom: 14px;
-  object-fit: contain;
   filter: grayscale(0) brightness(1.1);
   opacity: 0.95;
   transition: filter 0.2s, opacity 0.2s;
-  display: block;
 }
 .contact-section .contact-info-block .contact-info-text {
   color: #888;
   font-size: 15px;
   line-height: 1.5;
-  text-align: center;
-  transition: color 0.2s;
-  user-select: none;
   font-weight: 400;
-  font-family: "Source Sans Pro", Arial, sans-serif;
   word-break: break-word;
 }
-
-.contact-map {
+.contact-section .contact-map {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
   position: relative;
   z-index: 1;
-  margin-bottom: 0;
 }
-.contact-map iframe {
+.contact-section .contact-map iframe {
   width: 100%;
   height: 400px;
   border: none;
-  display: block;
 }
 @media (max-width: 991.98px) {
-  .contact-map iframe {
+  .contact-section .contact-map iframe {
     height: 300px;
   }
 }
 @media (max-width: 767.98px) {
-  .contact-map iframe {
+  .contact-section .contact-map iframe {
     height: 200px;
   }
 }
-
-.contact-form-wrapper {
+.contact-section .contact-form-wrapper {
   position: absolute;
   left: 50%;
   bottom: 320px;
   transform: translateX(-50%);
-  z-index: 2;
   width: 100%;
   display: flex;
   justify-content: center;
-  pointer-events: auto;
-  margin-top: 0;
+  z-index: 2;
 }
 @media (max-width: 991.98px) {
-  .contact-form-wrapper {
+  .contact-section .contact-form-wrapper {
     bottom: 220px;
     padding: 0 10px;
   }
 }
 @media (max-width: 767.98px) {
-  .contact-form-wrapper {
+  .contact-section .contact-form-wrapper {
     position: static;
     transform: none;
-    margin: -70px auto 0 auto;
-    width: 100%;
-    justify-content: center;
+    margin: -70px auto 0;
     padding: 0 5px;
   }
 }
-
-.contact-form {
+.contact-section .contact-form {
   background: #18181e;
   border-radius: 4px;
-  padding: 36px 38px 28px 38px;
+  padding: 36px 38px 28px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
   width: 100%;
   max-width: 760px;
@@ -1129,134 +1054,122 @@ body {
   gap: 22px;
 }
 @media (max-width: 991.98px) {
-  .contact-form {
-    padding: 18px 10px 14px 10px;
+  .contact-section .contact-form {
+    padding: 18px 10px 14px;
     max-width: 98vw;
   }
 }
-
-.form-grid {
+.contact-section .form-grid {
   display: flex;
   gap: 24px;
 }
 @media (max-width: 767.98px) {
-  .form-grid {
+  .contact-section .form-grid {
     flex-direction: column;
     gap: 10px;
   }
 }
-.form-grid .form-left {
+.contact-section .form-grid .form-left,
+.contact-section .form-grid .form-right {
+  display: flex;
+  flex-direction: column;
+}
+.contact-section .form-grid .form-left {
   flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
-.form-grid .form-right {
+.contact-section .form-grid .form-right {
   flex: 1 1 340px;
-  display: flex;
-  flex-direction: column;
 }
-.form-grid .form-right textarea {
-  height: 100%;
+.contact-section .form-grid .form-right textarea {
   min-height: 120px;
   resize: vertical;
 }
-
-.form-control {
+.contact-section .form-control {
   background: transparent;
   border: 1px solid #333;
   border-radius: 2px;
   color: #fff;
   font-size: 15px;
-  margin-bottom: 0;
   padding: 12px 16px;
-  transition: border-color 0.2s;
 }
-.form-control:focus {
+.contact-section .form-control:focus {
   border-color: #00aaff;
   background: #222;
-  color: #fff;
 }
-.form-control::placeholder {
+.contact-section .form-control::placeholder {
   color: #888;
 }
-
-.form-actions {
+.contact-section .form-actions {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
 }
-
-.send-btn {
+.contact-section .send-btn {
   background: #00aaff;
   border: none;
-  color: #fff;
-  font-weight: 700;
   border-radius: 2px;
   padding: 12px 32px;
   font-size: 16px;
+  font-weight: 700;
+  color: #fff;
   text-transform: uppercase;
   transition: background 0.2s;
 }
-.send-btn:hover, .send-btn:focus {
+.contact-section .send-btn:hover, .contact-section .send-btn:focus {
   background: #0070b8;
 }
-
-.thankyou-modal {
+.contact-section .thankyou-modal {
   display: none;
   position: fixed;
   z-index: 10000;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.45);
   justify-content: center;
   align-items: center;
   transition: opacity 0.2s;
 }
-.thankyou-modal.active {
+.contact-section .thankyou-modal.active {
   display: flex;
 }
-.thankyou-modal .thankyou-modal-content {
+.contact-section .thankyou-modal .thankyou-modal-content {
   background: #fff;
   border-radius: 8px;
-  padding: 36px 38px 28px 38px;
+  padding: 36px 38px 28px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   text-align: center;
   min-width: 320px;
   max-width: 90vw;
 }
-.thankyou-modal .thankyou-title {
+.contact-section .thankyou-modal .thankyou-title {
   font-size: 28px;
   font-weight: 700;
   color: #008de6;
   margin-bottom: 12px;
 }
-.thankyou-modal .thankyou-text {
-  color: #333;
+.contact-section .thankyou-modal .thankyou-text {
   font-size: 17px;
-  margin-bottom: 26px;
+  color: #333;
   line-height: 1.6;
+  margin-bottom: 26px;
 }
-.thankyou-modal .thankyou-close {
+.contact-section .thankyou-modal .thankyou-close {
   background: #008de6;
-  color: #fff;
   border: none;
   border-radius: 3px;
   font-size: 15px;
   font-weight: 600;
   padding: 12px 32px;
+  color: #fff;
   cursor: pointer;
   transition: background 0.2s;
 }
-.thankyou-modal .thankyou-close:hover, .thankyou-modal .thankyou-close:focus {
+.contact-section .thankyou-modal .thankyou-close:hover, .contact-section .thankyou-modal .thankyou-close:focus {
   background: #005fa3;
 }
 
 .footer-section {
   background: #18181e;
-  padding: 38px 0 30px 0;
+  padding: 38px 0 30px;
   text-align: center;
 }
 .footer-section .footer-social {
@@ -1284,7 +1197,7 @@ body {
 }
 @media (max-width: 575.98px) {
   .footer-section {
-    padding: 26px 0 16px 0;
+    padding: 26px 0 16px;
   }
   .footer-section .footer-social a.footer-icon {
     font-size: 20px;

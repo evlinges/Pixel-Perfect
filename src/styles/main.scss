@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@use 'variables';
 @use 'header';
 @use 'hero';
 @use 'features';
@@ -10,7 +9,7 @@
 @use 'footer';
 
 
-/* Базові стилі */
+
 html, body {
   overflow-x: hidden;
 }

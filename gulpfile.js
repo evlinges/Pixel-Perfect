@@ -10,7 +10,7 @@ const sassCompiler = gulpSass(sass);
 gulp.task('styles', () => {
   return gulp.src('src/styles/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sassCompiler().on('error', sassCompiler.logError)) // Використовуємо gulp-sass з компілятором sass
+    .pipe(sassCompiler().on('error', sassCompiler.logError)) 
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/styles'));
 });

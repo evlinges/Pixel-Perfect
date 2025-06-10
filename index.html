@@ -8,177 +8,173 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
   <!-- Bootstrap 4 CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <!-- Font Awesome для іконок -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="src/styles/main.css">
-
 </head>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <body>
-<header class="site-header">
-  <nav class="navbar">
-    <a class="navbar-brand" href="#">
-      <div class="logo-text">
-        <span class="logo-main">LUCID</span>
-        <div class="logo-sub">
-          <span>ONEPAGE</span>
-          <span>THEME</span>
+  <main>
+    <header class="site-header">
+      <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <div class="logo-text">
+            <span class="logo-main">LUCID</span>
+            <div class="logo-sub">
+              <span>ONEPAGE</span>
+              <span>THEME</span>
+            </div>
+          </div>
+        </a>
+        <div class="burger" id="burger">
+          <span></span>
         </div>
-      </div>
-    </a>
+        <div class="menu" id="menu">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
 
-    <div class="burger" id="burger">
-      <span></span>
-    </div>
-
-    <div class="menu" id="menu">
-      <a href="#home">Home</a>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
-
-
-  
-  
-<section class="hero-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="hero-text-inner">
-          <h5 class="hero-subtitle">Introducing Lucid Theme</h5>
-          <h1 class="hero-title">Carefully crafted and beautiful landing page.</h1>
-          <p class="hero-description">
-            Etiam ullamcorper et turpis eget hendrerit. Praesent varius risus mi, at elementum magna ultricies accumsan. Cras venenatis lacus sed dolor placerat tempus. Morbi blandit at neque ut imperdiet.
-          </p>
-          <div class="hero-buttons">
-            <a href="#" class="btn btn-primary">Download Now</a>
-            <a href="#" class="btn btn-outline-light">View Features</a>
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="hero-text-inner">
+              <h5 class="hero-subtitle">Introducing Lucid Theme</h5>
+              <h1 class="hero-title">Carefully crafted and beautiful landing page.</h1>
+              <p class="hero-description">
+                Etiam ullamcorper et turpis eget hendrerit. Praesent varius risus mi, at elementum magna ultricies accumsan. Cras venenatis lacus sed dolor placerat tempus. Morbi blandit at neque ut imperdiet.
+              </p>
+              <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Download Now</a>
+                <a href="#" class="btn btn-outline-light">View Features</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="hero-image">
+              <img src="src/img/iphone.png" alt="Hero Image" class="img-fluid">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="features-section py-5" id="features">
-  <div class="container">
-    <div class="section-header text-center mb-5">
-      <h5 class="section-subtitle text-uppercase text-primary">Product Overview</h5>
-      <h2 class="section-title">List of amazing features</h2>
-      <div class="blue-line mx-auto mt-3">
-        <img src="src/img/blue_line.png" alt="blue line" />
-      </div>
-    </div>
-    
-    <div class="row gx-7 gy-7 text-center">
-      <div class="col-md-6 col-lg-3">
-        <div class="feature-item">
-          <div class="feature-icon mx-auto">
-            <img src="src/img/monitor.png" alt="Responsive" class="img-icon">
+    <section class="features-section py-5" id="features">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h5 class="section-subtitle">Product Overview</h5>
+          <h2 class="section-title">List of amazing features</h2>
+          <div class="blue-line mx-auto mt-3">
+            <img src="src/img/blue_line.png" alt="blue line" />
           </div>
-          <h3 class="feature-title">Responsive</h3>
-          <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="row gx-7 gy-7 text-center">
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-item">
+              <div class="feature-icon mx-auto">
+                <img src="src/img/monitor.png" alt="Responsive" class="img-icon">
+              </div>
+              <h3 class="feature-title">Responsive</h3>
+              <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-item">
+              <div class="feature-icon mx-auto">
+                <img src="src/img/Settings.png" alt="Customizable" class="img-icon">
+              </div>
+              <h3 class="feature-title">Customizable</h3>
+              <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-item">
+              <div class="feature-icon mx-auto">
+                <img src="src/img/like.png" alt="Lovely Design" class="img-icon">
+              </div>
+              <h3 class="feature-title">Lovely Design</h3>
+              <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-item">
+              <div class="feature-icon mx-auto">
+                <img src="src/img/icon_iphone.png" alt="Mobile Friendly" class="img-icon">
+              </div>
+              <h3 class="feature-title">Mobile Friendly</h3>
+              <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="feature-item">
-          <div class="feature-icon mx-auto">
-            <img src="src/img/Settings.png" alt="Customizable" class="img-icon">
-          </div>
-          <h3 class="feature-title">Customizable</h3>
-          <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="feature-item">
-          <div class="feature-icon mx-auto">
-            <img src="src/img/like.png" alt="Lovely Design" class="img-icon">
-          </div>
-          <h3 class="feature-title">Lovely Design</h3>
-          <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="feature-item">
-          <div class="feature-icon mx-auto">
-            <img src="src/img/icon_iphone.png" alt="Mobile Friendly" class="img-icon">
-          </div>
-          <h3 class="feature-title">Mobile Friendly</h3>
-          <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  
-<section class="details-section">
-  <div class="container">
-    <!-- Блок 1: Два стоячих телефони (одна картинка двічі) -->
-    <div class="row align-items-center details-item mb-5">
-      <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-left">
-        <div class="phones-group">
-          <img src="src/img/iphone.png" alt="Standing phone left" class="phone-img phone-img-left">
-        </div>
-      </div>
-      <div class="col-lg-6 details-content">
-        <h5 class="details-subtitle">DIP INTO THE DETAILS</h5>
-        <h2 class="details-title">Beautiful on every device</h2>
-        <div class="blue-line">
-          <img src="src/img/blue_line.png" alt="blue line">
-        </div>
-        <p class="details-desc">
-          Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
-        </p>
-        <ul class="details-list">
-          <li>
-            <span class="details-icon"><img src="src/img/cup_list.png" alt=""></span>
-            Awesome design
-          </li>
-          <li>
-            <span class="details-icon"><img src="src/img/mouse_list.png" alt=""></span>
-            Fully responsive
-          </li>
-          <li>
-            <span class="details-icon"><img src="src/img/Energy.png" alt=""></span>
-            Retina ready
-          </li>
-          <li>
-            <span class="details-icon"><img src="src/img/speedometer_list.png" alt=""></span>
-            Tons of features and easy to use
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- Блок 2: Лежачий телефон, сірий фон на всю ширину -->
-  <div class="details-gray-bg">
-    <div class="container">
-      <div class="row align-items-center details-item flex-lg-row-reverse mb-0">
-        <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-right">
-          <img src="src/img/phone.png" alt="Super easy to customize" class="img-fluid details-img details-img-large">
-        </div>
-        <div class="col-lg-6 details-content">
-          <h5 class="details-subtitle">DIP INTO THE DETAILS</h5>
-          <h2 class="details-title">Super easy to customize</h2>
-          <div class="blue-line">
-            <img src="src/img/blue_line.png" alt="blue line">
+    <section class="details-section">
+      <div class="container">
+        <!-- Block 1: Two standing phones (one image twice) -->
+        <div class="row align-items-center details-item mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-left">
+            <div class="phones-group">
+              <img src="src/img/iphone.png" alt="Standing phone left" class="phone-img phone-img-left">
+            </div>
           </div>
-          <p class="details-desc">
-            Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-          </p>
+          <div class="col-lg-6 details-content">
+            <h5 class="details-subtitle">DIP INTO THE DETAILS</h5>
+            <h2 class="details-title">Beautiful on every device</h2>
+            <div class="blue-line">
+              <img src="src/img/blue_line.png" alt="blue line">
+            </div>
+            <p class="details-desc">
+              Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
+            </p>
+            <ul class="details-list">
+              <li>
+                <span class="details-icon"><img src="src/img/cup_list.png" alt=""></span>
+                Awesome design
+              </li>
+              <li>
+                <span class="details-icon"><img src="src/img/mouse_list.png" alt=""></span>
+                Fully responsive
+              </li>
+              <li>
+                <span class="details-icon"><img src="src/img/Energy.png" alt=""></span>
+                Retina ready
+              </li>
+              <li>
+                <span class="details-icon"><img src="src/img/speedometer_list.png" alt=""></span>
+                Tons of features and easy to use
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      <!-- Block 2: Lying phone, gray background full width -->
+      <div class="details-gray-bg">
+        <div class="container">
+          <div class="row align-items-center details-item flex-lg-row-reverse mb-0">
+            <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-right">
+              <img src="src/img/phone.png" alt="Super easy to customize" class="img-fluid details-img details-img-large">
+            </div>
+            <div class="col-lg-6 details-content">
+              <h5 class="details-subtitle">DIP INTO THE DETAILS</h5>
+              <h2 class="details-title">Super easy to customize</h2>
+              <div class="blue-line">
+                <img src="src/img/blue_line.png" alt="blue line">
+              </div>
+              <p class="details-desc">
+                Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <section class="testimonial-section">
   <div class="testimonial-slider-wrapper">
@@ -187,7 +183,6 @@
     <div class="blue-line"></div>
     <div class="swiper testimonial-slider">
       <div class="swiper-wrapper">
-        <!-- Слайд 1 -->
         <div class="swiper-slide">
           <div class="testimonial-row">
             <div class="testimonial">
@@ -440,21 +435,18 @@
   </div>
 
   <div class="contact-form-wrapper">
-    <form class="contact-form">
-      <div class="form-grid">
-        <div class="form-left">
-          <input type="text" class="form-control" placeholder="NAME *" required>
-          <input type="email" class="form-control" placeholder="EMAIL *" required>
-          <input type="text" class="form-control" placeholder="SUBJECT *" required>
-        </div>
-        <div class="form-right">
-          <textarea class="form-control" placeholder="MESSAGE *" rows="6" required></textarea>
-        </div>
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="send-btn">SEND MESSAGE</button>
-      </div>
-    </form>
+   <form class="contact-form">
+  <div class="form-grid">
+    <input type="text" class="form-control" placeholder="NAME *" required>
+    <input type="email" class="form-control" placeholder="EMAIL *" required>
+    <textarea class="form-control message-control" placeholder="MESSAGE *" rows="6" required></textarea>
+    <input type="text" class="form-control subject-control" placeholder="SUBJECT *" required>
+  </div>
+  <div class="form-actions">
+    <button type="submit" class="send-btn">SEND MESSAGE</button>
+  </div>
+</form>
+
   </div>
   <div class="thankyou-modal" id="thankyou-modal">
     <div class="thankyou-modal-content">
@@ -494,10 +486,11 @@
 </footer>
 
 
-  <!-- Скрипти -->
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="src/js/main.js"></script>
   <script src="src/js/slider.js"></script>
 <link
@@ -505,6 +498,6 @@
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
 
-
+</main>
 </body>
 </html>

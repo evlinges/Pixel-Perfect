@@ -1,4 +1,3 @@
-/* === HEADER === */
 .site-header {
   position: absolute;
   top: 30px;
@@ -6,79 +5,97 @@
   width: 100%;
   z-index: 1000;
   background: transparent;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  &.scrolled {
+    position: fixed;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    .menu a {
+      color: #222;
+    }
+
+    .burger span,
+    .burger::before,
+    .burger::after {
+      background-color: #222;
+    }
+
+    .navbar-brand {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+    }
+  }
 }
 
-/* При прокрутці - фіксоване меню, без фону */
-.site-header.scrolled {
-  position: fixed;
-  top: 0;
-
-  .menu a {
-    color: #222;
-  }
-
-  .burger span,
-  .burger::before,
-  .burger::after {
-    background-color: #222;
-  }
-}
-
-/* === NAVBAR === */
 .navbar {
   display: flex;
-  align-items: center;
+  align-items: center; // по центру вертикально
   justify-content: space-between;
   max-width: 1170px;
   margin: 0 auto;
-  padding: 10px 15px;
-}
+  padding: 15px 20px;
 
-/* === LOGO === */
-.navbar-brand {
-  display: flex;
-  align-items: flex-end;
-  text-decoration: none;
-  color: #fff;
-  pointer-events: none;
-
-  &:hover,
-  &:focus {
-    color: #fff;
-    text-decoration: none;
-    background: none;
-    box-shadow: none;
-    outline: none;
+  @media (max-width: 991.98px) {
+    padding: 10px 20px;
+    height: 60px;
   }
 }
 
-.logo-text {
+.navbar-brand {
   display: flex;
-  align-items: flex-end;
-  gap: 8px;
+  align-items: center; // по центру вертикально
+  text-decoration: none;
+  color: #fff;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin: 0;
+  position: static;
+  transform: none;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    display: flex;
+    align-items: center; // по центру вертикально
+    gap: 8px;
+
+    .logo-main {
+      font-size: 35px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1;
+
+      @media (max-width: 991.98px) {
+        font-size: 30px;
+      }
+    }
+
+    .logo-sub {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #58585d;
+      line-height: 1.1;
+      margin-bottom: 6px;
+
+      @media (max-width: 991.98px) {
+        font-size: 10px;
+        margin-bottom: 6px;
+      }
+    }
+  }
 }
 
-.logo-main {
-  font-size: 35px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  margin-left: 0;
-}
-
-.logo-sub {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #58585d;
-  line-height: 1.1;
-  margin-bottom: 6px;
-}
-
-/* === BURGER ICON === */
 .burger {
   width: 30px;
   height: 22px;
@@ -125,13 +142,16 @@
     bottom: 9px;
     transform: rotate(720deg) rotate(-45deg);
   }
+
+  @media (max-width: 991.98px) {
+    display: block;
+  }
 }
 
-/* === MENU (desktop) === */
 .menu {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 40px;
 
   a {
     position: relative;
@@ -139,8 +159,7 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
-    padding: 0 4px;
-    display: inline-block;
+    padding: 8px 4px;
     transition: color 0.3s ease;
 
     &::after {
@@ -156,77 +175,45 @@
       border-radius: 1px;
     }
 
+    // Логотип НЕ підкреслюємо (припускаю, що він має клас navbar-brand)
+    &:not(.navbar-brand)::after {
+      opacity: 0;
+    }
+
     &.active::after,
     &:hover::after,
     &:focus::after {
       opacity: 1;
     }
   }
-}
-/* Коли прокрутили — ховаємо логотип */
-.site-header.scrolled .navbar-brand {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
-/* Початковий стан — показуємо */
-.navbar-brand {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-
-/* === MOBILE MENU === */
-@media (max-width: 991.98px) {
-  .burger {
-    display: block;
-  }
-
-  .menu {
+  @media (max-width: 991.98px) {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
+    height: 100vh;
     background: #18171c;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    padding: 80px 0 30px;
+    justify-content: center;
+    gap: 30px;
+    padding: 100px 20px 40px;
     margin: 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 1000;
-  }
 
-  .menu.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
+    a {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 600;
+    }
 
-  .navbar {
-    padding: 0 15px;
-    max-width: 1170px;
-    margin: 0 auto;
-    height: 60px;
-  }
-
-  .logo-main {
-    font-size: 32px;
-    margin-left: 0;
-  }
-
-  .logo-sub {
-    font-size: 10px;
-    margin-bottom: 7px;
-  }
-
-  .navbar-brand {
-    margin: 0;
-    position: static;
-    transform: none;
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }

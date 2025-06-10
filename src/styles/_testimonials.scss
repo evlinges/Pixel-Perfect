@@ -13,7 +13,7 @@
   }
 
   .section-subtitle {
-    color: #00aaff;
+    color: #008de6;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -114,7 +114,7 @@
 
     .swiper-pagination-bullet-active {
       background: #fff;
-      border-color: #00aaff;
+      border-color: #008de6;
     }
   }
 
@@ -162,7 +162,6 @@
 }
 
 
-  // --- CTA Panel (Updated based on your layout)
 .cta-panel {
   background: #18171c;
   display: flex;
@@ -173,7 +172,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   border-top: 1px solid #2c2b30;
   position: relative;
-  top: 100px; // або більше — це "опускає" панель візуально
+  top: 100px; 
   z-index: 3;
 
   &__text {
@@ -229,7 +228,7 @@
       border: none;
 
       &:hover {
-    background-color: #0020d6; // трохи темніший відтінок
+    background-color: #0020d6; 
    
     
   }

@@ -5,7 +5,7 @@
   z-index: 2;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
-  padding: 300px 0; // Більше простору
+  padding: 300px 0; 
 
   font-family: 'Source Sans Pro', sans-serif;
 
@@ -23,7 +23,7 @@
 
     .section-title {
       font-size: 32px;
-      font-weight: 600; // Тонший заголовок
+      font-weight: 600; 
       margin-top: 10px;
       color: #18171c;
     }
@@ -70,7 +70,7 @@
 
     .feature-title {
       font-size: 20px;
-      font-weight: 600; // Тонший заголовок блоку
+      font-weight: 600;
       letter-spacing: 0.5px;
       color: #1a1a1a;
       margin-bottom: 15px;
@@ -78,7 +78,7 @@
 
     .feature-text {
       font-size: 16px;
-      font-weight: 600; // Грубіший опис
+      font-weight: 600; 
       line-height: 1.6;
       color: #b4b4b4;
       max-width: 260px;
