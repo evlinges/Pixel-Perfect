@@ -435,18 +435,21 @@
   </div>
 
   <div class="contact-form-wrapper">
-   <form class="contact-form">
-  <div class="form-grid">
-    <input type="text" class="form-control" placeholder="NAME *" required>
-    <input type="email" class="form-control" placeholder="EMAIL *" required>
-    <textarea class="form-control message-control" placeholder="MESSAGE *" rows="6" required></textarea>
-    <input type="text" class="form-control subject-control" placeholder="SUBJECT *" required>
-  </div>
-  <div class="form-actions">
-    <button type="submit" class="send-btn">SEND MESSAGE</button>
-  </div>
-</form>
-
+    <form class="contact-form">
+      <div class="form-grid">
+        <div class="form-left">
+          <input type="text" class="form-control" placeholder="NAME *" required>
+          <input type="email" class="form-control" placeholder="EMAIL *" required>
+          <input type="text" class="form-control" placeholder="SUBJECT *" required>
+        </div>
+        <div class="form-right">
+          <textarea class="form-control" placeholder="MESSAGE *" rows="6" required></textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="send-btn">SEND MESSAGE</button>
+      </div>
+    </form>
   </div>
   <div class="thankyou-modal" id="thankyou-modal">
     <div class="thankyou-modal-content">

@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    // Тут можна додати ajax-запит, якщо потрібно
     modal.classList.add('active');
     form.reset();
   });
@@ -34,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
 
 
 

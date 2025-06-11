@@ -33,7 +33,7 @@
 
 .navbar {
   display: flex;
-  align-items: center; // по центру вертикально
+  align-items: center; 
   justify-content: space-between;
   max-width: 1170px;
   margin: 0 auto;
@@ -47,7 +47,7 @@
 
 .navbar-brand {
   display: flex;
-  align-items: center; // по центру вертикально
+  align-items: center; 
   text-decoration: none;
   color: #fff;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -64,7 +64,7 @@
 
   .logo-text {
     display: flex;
-    align-items: center; // по центру вертикально
+    align-items: center; 
     gap: 8px;
 
     .logo-main {
@@ -175,7 +175,6 @@
       border-radius: 1px;
     }
 
-    // Логотип НЕ підкреслюємо (припускаю, що він має клас navbar-brand)
     &:not(.navbar-brand)::after {
       opacity: 0;
     }
