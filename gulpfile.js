@@ -1,19 +1,19 @@
 import gulp from 'gulp';
 import sourcemaps from 'gulp-sourcemaps';
-import * as sass from 'sass';
+import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 
-// Ініціалізація gulp-sass з компілятором sass
-const sassCompiler = gulpSass(sass);
+// Ініціалізація компілятора
+const sassCompiler = gulpSass(dartSass);
 
-// Оголошення таску "styles"
-gulp.task('styles', () => {
-  return gulp.src('src/styles/*.scss')
+// Таск для SCSS
+export function styles() {
+  return gulp.src('src/styles/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sassCompiler().on('error', sassCompiler.logError)) 
+    .pipe(sassCompiler().on('error', sassCompiler.logError))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/styles'));
-});
+}
 
-// Додавання таску за замовчуванням
-gulp.task('default', gulp.series('styles'));
+// Таск за замовчуванням
+export default gulp.series(styles);
