@@ -1,13 +1,11 @@
 .contact-section {
   background: #f7f8fa;
   position: relative;
-  padding-top: 60px;
-  padding-bottom: 0;
+  padding: 60px 0 0 0;
   min-height: 950px;
 
   .container {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
   }
 
   .contact-subtitle {
@@ -16,14 +14,14 @@
     font-size: 15px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
   }
 
   .contact-title {
     font-size: 36px;
     font-weight: 700;
     color: #222;
-    margin-bottom: 0;
+    margin: 0;
   }
 
   .blue-line img {
@@ -37,7 +35,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 180px;
-    margin: 60px 0 300px;
+    margin: 60px 0 300px 0;
 
     @media (max-width: 1200px) {
       gap: 100px;
@@ -45,14 +43,14 @@
 
     @media (max-width: 991.98px) {
       gap: 60px;
-      margin-bottom: 70px;
+      margin: 60px 0 70px 0;
     }
 
     @media (max-width: 767.98px) {
       flex-direction: column;
       gap: 28px;
       align-items: center;
-      margin-bottom: 30px;
+      margin: 0 0 30px 0;
     }
   }
 
@@ -149,7 +147,7 @@
   .contact-form {
     background: #18181e;
     border-radius: 4px;
-    padding: 36px 38px 28px;
+    padding: 36px 38px 28px 38px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
     width: 100%;
     max-width: 760px;
@@ -160,6 +158,10 @@
     @media (max-width: 991.98px) {
       padding: 24px 16px;
       max-width: 98vw;
+    }
+
+    @media (max-width: 767.98px) {
+      padding: 24px 20px;
     }
   }
 
@@ -217,7 +219,7 @@
   .form-actions {
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
   }
 
   .send-btn {
@@ -257,7 +259,7 @@
     .thankyou-modal-content {
       background: #fff;
       border-radius: 8px;
-      padding: 36px 38px 28px;
+      padding: 36px 38px 28px 38px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
       text-align: center;
       min-width: 320px;
@@ -268,13 +270,13 @@
       font-size: 28px;
       font-weight: 700;
       color: #008de6;
-      margin-bottom: 12px;
+      margin: 0 0 12px 0;
     }
 
     .thankyou-text {
       color: #333;
       font-size: 17px;
-      margin-bottom: 26px;
+      margin: 0 0 26px 0;
       line-height: 1.6;
     }
 
@@ -294,7 +296,6 @@
         background: #005fa3;
       }
     }
-    
   }
 }
 
@@ -302,7 +303,7 @@
   .contact-form-wrapper {
     position: static !important;
     transform: none !important;
-    margin-top: 0 !important;
+    margin: 0;
     padding: 0 15px;
     width: 100%;
     display: flex;

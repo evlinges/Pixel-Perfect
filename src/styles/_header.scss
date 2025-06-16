@@ -33,7 +33,7 @@
 
 .navbar {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
   max-width: 1170px;
   margin: 0 auto;
@@ -47,7 +47,7 @@
 
 .navbar-brand {
   display: flex;
-  align-items: center; 
+  align-items: center;
   text-decoration: none;
   color: #fff;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -64,7 +64,7 @@
 
   .logo-text {
     display: flex;
-    align-items: center; 
+    align-items: center;
     gap: 8px;
 
     .logo-main {
@@ -86,11 +86,11 @@
       letter-spacing: 1px;
       color: #58585d;
       line-height: 1.1;
-      margin-bottom: 6px;
+      margin: 0 0 6px 0;
 
       @media (max-width: 991.98px) {
         font-size: 10px;
-        margin-bottom: 6px;
+        margin: 0 0 6px 0;
       }
     }
   }
@@ -197,7 +197,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
-    padding: 100px 20px 40px;
+    padding: 100px 20px 40px 20px;
     margin: 0;
     opacity: 0;
     pointer-events: none;

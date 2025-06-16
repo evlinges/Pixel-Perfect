@@ -3,10 +3,10 @@ import sourcemaps from 'gulp-sourcemaps';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 
-// Ініціалізація компілятора
+// Compiler initialization
 const sassCompiler = gulpSass(dartSass);
 
-// Таск для SCSS
+// Task for SCSS
 export function styles() {
   return gulp.src('src/styles/**/*.scss')
     .pipe(sourcemaps.init())
@@ -15,5 +15,5 @@ export function styles() {
     .pipe(gulp.dest('dist/styles'));
 }
 
-// Таск за замовчуванням
+// Default task
 export default gulp.series(styles);

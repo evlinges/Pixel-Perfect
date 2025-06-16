@@ -1,17 +1,16 @@
 .features-section {
   position: relative;
   background: #fff;
-  margin-top: -60px;
+  margin: -60px 0 0 0;
   z-index: 2;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
-  padding: 300px 0; 
-
+  padding: 300px 0 300px 0;
   font-family: 'Source Sans Pro', sans-serif;
 
   .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin: 0 0 80px 0;
 
     .section-subtitle {
       font-weight: 600;
@@ -23,8 +22,8 @@
 
     .section-title {
       font-size: 32px;
-      font-weight: 600; 
-      margin-top: 10px;
+      font-weight: 600;
+      margin: 10px 0 0 0;
       color: #18171c;
     }
 
@@ -40,9 +39,8 @@
     }
   }
 
-
   .feature-item {
-    padding: 0 10px;
+    padding: 0 10px 0 10px;
     text-align: center;
 
     .feature-icon {
@@ -53,7 +51,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 30px;
+      margin: 0 auto 30px auto;
       transition: border-color 0.3s, box-shadow 0.3s;
 
       img.img-icon {
@@ -73,12 +71,12 @@
       font-weight: 500;
       letter-spacing: 0.5px;
       color: #1a1a1a;
-      margin-bottom: 15px;
+      margin: 0 0 15px 0;
     }
 
     .feature-text {
       font-size: 16px;
-      font-weight: 500; 
+      font-weight: 500;
       line-height: 1.6;
       color: #b4b4b4;
       max-width: 260px;
@@ -86,7 +84,6 @@
     }
   }
 
-  // MEDIA QUERIES
   @media (max-width: 1199.98px) {
     .features-wrapper {
       grid-template-columns: repeat(3, 1fr);
@@ -95,10 +92,10 @@
   }
 
   @media (max-width: 991.98px) {
-    padding: 120px 0;
+    padding: 120px 0 120px 0;
 
     .section-header {
-      margin-bottom: 50px;
+      margin: 0 0 50px 0;
 
       .section-title {
         font-size: 28px;
@@ -132,7 +129,7 @@
   }
 
   @media (max-width: 767.98px) {
-    padding: 100px 0;
+    padding: 100px 0 100px 0;
 
     .section-title {
       font-size: 24px;
@@ -164,3 +161,4 @@
     }
   }
 }
+

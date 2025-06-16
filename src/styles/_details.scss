@@ -3,10 +3,10 @@
   padding: 0;
 
   .details-item {
-    margin-bottom: 80px;
+    margin: 0 0 80px 0;
 
     &:last-child {
-      margin-bottom: 0;
+      margin: 0;
     }
   }
 
@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding-left: 0;
+    padding: 0 0 0 0;
   }
 
   .details-subtitle {
@@ -37,21 +37,21 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin: 0 0 12px;
+    margin: 0 0 12px 0;
     font-family: 'Source Sans Pro', Arial, sans-serif;
   }
 
   .details-title {
     font-size: 36px;
     font-weight: 600;
-    margin: 0 0 18px;
+    margin: 0 0 18px 0;
     color: #232323;
     font-family: 'Source Sans Pro', Arial, sans-serif;
     line-height: 1.2;
   }
 
   .blue-line {
-    margin: -6px 0 24px;
+    margin: -6px 0 24px 0;
 
     img {
       width: 60px;
@@ -65,7 +65,7 @@
     color: #999999;
     font-size: 16px;
     line-height: 1.7;
-    margin: 0 0 22px;
+    margin: 0 0 22px 0;
     font-family: 'Source Sans Pro', Arial, sans-serif;
     font-weight: 500;
   }
@@ -73,12 +73,12 @@
   .details-list {
     list-style: none;
     padding: 0;
-    margin: 18px 0 0;
+    margin: 18px 0 0 0;
 
     li {
       color: #232323;
       font-size: 17px;
-      margin: 0 0 10px;
+      margin: 0 0 10px 0;
       display: flex;
       align-items: center;
       font-family: 'Source Sans Pro', Arial, sans-serif;
@@ -87,7 +87,7 @@
       .details-icon {
         display: inline-flex;
         align-items: center;
-        margin-right: 12px;
+        margin: 0 12px 0 0;
 
         img {
           height: 18px;
@@ -104,22 +104,21 @@
     width: 100vw;
     position: relative;
     left: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding: 80px 0;
+    margin: 0 -50vw;
+    padding: 80px 0 80px 0;
   }
 
   @media (max-width: 991.98px) {
-    padding: 60px 0 40px;
+    padding: 60px 0 40px 0;
 
     .details-item {
       flex-direction: column !important;
       text-align: center;
-      margin-bottom: 40px;
+      margin: 0 0 40px 0;
     }
 
     .details-img {
-      margin-bottom: 24px;
+      margin: 0 auto 24px auto;
       max-width: 300px;
     }
 
@@ -136,12 +135,11 @@
     }
 
     .blue-line img {
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0;
     }
 
     .details-gray-bg {
-      padding: 40px 0;
+      padding: 40px 0 40px 0;
     }
   }
 }

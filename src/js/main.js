@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Бургер-меню
+  // burger
   const burger = document.getElementById('burger');
   const menu = document.getElementById('menu');
 
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Ховаємо логотип при відкритті мобільного меню Bootstrap
+
   const navCollapse = document.getElementById('mainNav');
   const logo = document.querySelector('.navbar-brand');
 
@@ -32,7 +32,7 @@ pricingBoxes.forEach(box => {
   const button = box.querySelector('.btn-order');
 
   if (name && price && button) {
-    // 🔹 Наведення на ціну
+
     price.addEventListener('mouseenter', () => {
       name.classList.add('highlight');
       price.classList.add('highlight');
@@ -43,7 +43,6 @@ pricingBoxes.forEach(box => {
       price.classList.remove('highlight');
     });
 
-    // 🔹 Наведення на кнопку
     button.addEventListener('mouseenter', () => {
       name.classList.add('highlight');
       price.classList.add('highlight');
