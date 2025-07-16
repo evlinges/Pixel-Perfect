@@ -171,13 +171,13 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     background: #18171c;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0px;
-    padding: 20px 10px 20px 10px;
+    gap: 30px;
+    padding: 100px 20px 40px 20px;
     margin: 0;
     opacity: 0;
     pointer-events: none;
@@ -400,8 +400,7 @@
 .features-section .feature-item .feature-icon img.img-icon {
   width: 40px;
   height: 40px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .features-section .feature-item:hover .feature-icon {
   border-color: #008de6;
@@ -568,8 +567,7 @@
 .details-section .details-list li .details-icon img {
   height: 18px;
   width: 18px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   display: block;
 }
 .details-section .details-gray-bg {
@@ -682,8 +680,7 @@
   height: 60px;
   border-radius: 50%;
   border: 2px solid #fff;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .testimonial-section .testimonial .author h6 {
   margin: 0 0 2px 0;
@@ -1117,8 +1114,7 @@
   width: 32px;
   height: 32px;
   margin-bottom: 14px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   filter: grayscale(0) brightness(1.1);
   opacity: 0.95;
   transition: filter 0.2s, opacity 0.2s;
@@ -1239,9 +1235,6 @@
 .contact-section .form-control:focus {
   border-color: #00aaff;
   background: #222;
-}
-.contact-section .form-control::-moz-placeholder {
-  color: #888;
 }
 .contact-section .form-control::placeholder {
   color: #888;
@@ -1398,4 +1391,5 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}/*# sourceMappingURL=main.css.map */
+}
+/*# sourceMappingURL=main.css.map */
